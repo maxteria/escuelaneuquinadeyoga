@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 /**
  * Plugin Name: Escuela LMS Page Content
  * Description: Shortcodes para contenido de páginas
