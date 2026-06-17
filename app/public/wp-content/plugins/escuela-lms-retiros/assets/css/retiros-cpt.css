@@ -1,0 +1,560 @@
+/* =============================================
+   RETIROS CPT — Card grid for [retiros_listado]
+   ============================================= */
+
+/* ---- PAST SECTION ---- */
+.enyr-retiros-listado--past {
+  padding-top: 0;
+}
+
+.enyr-retiros-listado--past .enyr-retiros-listado__heading::before {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 2px;
+  background: #D4C9BE;
+  margin: 0 auto 48px;
+}
+
+/* ---- EXPIRED CARD ---- */
+.enyr-retiro-card--expired .enyr-retiro-card__image {
+  opacity: 0.7;
+}
+
+.enyr-retiro-card--expired .enyr-retiro-card__body {
+  opacity: 0.75;
+}
+
+/* ---- FINISHED LABEL ---- */
+.enyr-retiro-card__finished-label {
+  display: inline-flex;
+  align-items: center;
+  font-family: Cabin, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: #8C7C6E;
+  padding-top: 4px;
+}
+
+/* ---- EMPTY STATE ---- */
+.enyr-retiros-empty {
+  text-align: center;
+  padding: 60px 40px;
+}
+
+.enyr-retiros-empty__text {
+  font-family: Raleway, sans-serif;
+  font-size: 18px;
+  color: #5C4F43;
+  line-height: 1.8;
+  margin: 0 0 32px 0;
+}
+
+/* ---- CARD GRID ---- */
+.enyr-retiros-listado {
+  padding: 0 0 100px;
+}
+
+.enyr-retiros-listado__heading {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.enyr-retiros-listado__title {
+  font-family: Gilda Display, serif;
+  font-size: clamp(28px, 3.5vw, 40px);
+  color: #3D3229;
+  line-height: 1.15;
+  margin: 0;
+}
+
+.enyr-retiros__grid {
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+}
+
+/* ---- RETIRO CARD ---- */
+.enyr-retiro-card {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.enyr-retiro-card__image-wrap {
+  display: block;
+  overflow: hidden;
+  border-radius: 12px;
+  transition: opacity 0.3s ease;
+  text-decoration: none;
+}
+
+.enyr-retiro-card__image-wrap:hover {
+  opacity: 0.85;
+}
+
+.enyr-retiro-card__image {
+  width: 100%;
+  height: 380px;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.enyr-retiro-card__body {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.enyr-retiro-card__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+}
+
+.enyr-retiro-card__fecha,
+.enyr-retiro-card__tipo,
+.enyr-retiro-card__estado {
+  font-family: Cabin, sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.enyr-retiro-card__fecha {
+  color: #5C4F43;
+}
+
+.enyr-retiro-card__tipo {
+  color: #6B7F59;
+}
+
+.enyr-retiro-card__estado {
+  padding: 3px 10px;
+  border-radius: 3px;
+}
+
+.enyr-estado--proximo {
+  background: #e8f0fe;
+  color: #1967d2;
+}
+
+.enyr-estado--abierto {
+  background: #e6f4ea;
+  color: #137333;
+}
+
+.enyr-estado--completo {
+  background: #fef7e0;
+  color: #b06000;
+}
+
+.enyr-estado--finalizado {
+  background: #f0f0f0;
+  color: #5f6368;
+}
+
+.enyr-retiro-card__title {
+  font-family: Gilda Display, serif;
+  font-size: clamp(26px, 3vw, 36px);
+  line-height: 1.15;
+  margin: 0;
+}
+
+.enyr-retiro-card__title a {
+  color: #3D3229;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.enyr-retiro-card__title a:hover {
+  color: #6B7F59;
+}
+
+.enyr-retiro-card__excerpt {
+  font-family: Raleway, sans-serif;
+  font-size: 16px;
+  color: #5C4F43;
+  line-height: 1.8;
+  margin: 0;
+}
+
+.enyr-retiro-card__details {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.enyr-retiro-card__detail {
+  font-family: Cabin, sans-serif;
+  font-size: 14px;
+  color: #5C4F43;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* ---- CARD ACTIONS ---- */
+.enyr-retiro-card__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 24px;
+  padding-top: 8px;
+}
+
+.enyr-retiro-card__detail-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: Cabin, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: #8C7C6E;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.enyr-retiro-card__detail-link:hover {
+  color: #6B7F59;
+}
+
+.enyr-retiro-card__detail-link svg {
+  transition: transform 0.2s ease;
+}
+
+.enyr-retiro-card__detail-link:hover svg {
+  transform: translateX(4px);
+}
+
+/* ---- DESTACADO ---- */
+.enyr-retiro-destacado {
+  padding: 40px 0;
+}
+
+.enyr-retiro-destacado__inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+  background: #f9f7f5;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.enyr-retiro-destacado__image {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  display: block;
+}
+
+.enyr-retiro-destacado__body {
+  padding: 40px 40px 40px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.enyr-retiro-destacado__title {
+  font-family: Gilda Display, serif;
+  font-size: clamp(30px, 3.5vw, 42px);
+  color: #3D3229;
+  line-height: 1.1;
+  margin: 0;
+}
+
+.enyr-retiro-destacado__excerpt {
+  font-family: Raleway, sans-serif;
+  font-size: 16px;
+  color: #5C4F43;
+  line-height: 1.8;
+  margin: 0;
+}
+
+/* ---- RESPONSIVE ---- */
+@media (max-width: 900px) {
+  .enyr-retiro-card {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .enyr-retiro-card__image {
+    height: 320px;
+    max-width: 520px;
+    margin: 0 auto;
+  }
+
+  .enyr-retiro-destacado__inner {
+    grid-template-columns: 1fr;
+  }
+
+  .enyr-retiro-destacado__image {
+    height: 300px;
+  }
+
+  .enyr-retiro-destacado__body {
+    padding: 0 32px 32px;
+  }
+
+  .enyr-retiros-empty {
+    padding: 40px 32px;
+  }
+
+  .enyr-retiros__grid {
+    gap: 48px;
+  }
+}
+
+/* =============================================
+   BASE UTILITIES (self-contained)
+   ============================================= */
+
+.enyr-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.enyr-btn {
+  display: inline-flex;
+  align-items: center;
+  font-family: Cabin, sans-serif;
+  font-weight: 500;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+  padding: 14px 32px;
+  font-size: 15px;
+}
+
+.enyr-btn--primary {
+  background: #6B7F59;
+  color: #fff;
+}
+
+.enyr-btn--primary:hover {
+  background: #8B9F72;
+  color: #fff;
+  text-decoration: none;
+}
+
+.enyr-btn--large {
+  padding: 18px 40px;
+  font-size: 16px;
+}
+
+/* =============================================
+   SINGLE RETIRO — Template
+   ============================================= */
+
+.enyr-single-retiro__hero {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.enyr-single-retiro__hero-img {
+  width: 100%;
+  height: 60vh;
+  min-height: 400px;
+  max-height: 600px;
+  object-fit: cover;
+  display: block;
+}
+
+.enyr-single-retiro__hero-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: flex-end;
+  padding-bottom: 60px;
+  background: linear-gradient(to top, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.15) 50%, transparent 100%);
+}
+
+.enyr-single-retiro__hero-title {
+  font-family: Gilda Display, serif;
+  font-size: clamp(32px, 4vw, 56px);
+  color: #fff;
+  line-height: 1.1;
+  margin: 0 0 16px;
+}
+
+.enyr-single-retiro__hero-meta {
+  color: rgba(255,255,255,0.85);
+}
+
+.enyr-single-retiro__hero--noimg {
+  height: auto;
+  padding: 120px 0 80px;
+  background: #f5f2ee;
+  text-align: center;
+}
+
+.enyr-single-retiro__hero--noimg .enyr-single-retiro__hero-title {
+  color: #3D3229;
+}
+
+.enyr-single-retiro__hero--noimg .enyr-retiro-card__meta {
+  justify-content: center;
+}
+
+.enyr-single-retiro__main {
+  padding: 48px 0 100px;
+}
+
+.enyr-single-retiro__back {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: Cabin, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: #6B7F59;
+  text-decoration: none;
+  margin-bottom: 32px;
+  transition: color 0.2s ease;
+}
+
+.enyr-single-retiro__back:hover {
+  color: #3D3229;
+}
+
+.enyr-single-retiro__info {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  margin-bottom: 40px;
+  padding: 24px;
+  background: #f9f7f5;
+  border-radius: 8px;
+}
+
+.enyr-single-retiro__info-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: Cabin, sans-serif;
+  font-size: 15px;
+  color: #5C4F43;
+}
+
+.enyr-single-retiro__info-icon {
+  color: #6B7F59;
+  flex-shrink: 0;
+}
+
+.enyr-single-retiro__content {
+  max-width: 720px;
+  margin: 0 auto 48px;
+}
+
+.enyr-single-retiro__cta {
+  text-align: center;
+  padding: 48px 0;
+  border-top: 1px solid #e5ddd5;
+}
+
+/* ---- RESPONSIVE ---- */
+@media (max-width: 900px) {
+  .enyr-container {
+    padding: 0 32px;
+  }
+
+  .enyr-single-retiro__hero-img {
+    height: 50vh;
+    min-height: 320px;
+  }
+
+  .enyr-single-retiro__hero-overlay {
+    padding-bottom: 40px;
+  }
+
+  .enyr-single-retiro__hero--noimg {
+    padding: 80px 0 60px;
+  }
+
+  .enyr-single-retiro__main {
+    padding: 32px 0 80px;
+  }
+
+  .enyr-single-retiro__info {
+    gap: 24px;
+    padding: 20px;
+  }
+
+  .enyr-retiros-empty {
+    padding: 40px 32px;
+  }
+
+  .enyr-retiros__grid {
+    gap: 48px;
+  }
+
+  .enyr-btn {
+    width: 100%;
+    max-width: 300px;
+    text-align: center;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .enyr-container {
+    padding: 0 20px;
+  }
+
+  .enyr-retiro-card__image {
+    height: 240px;
+  }
+
+  .enyr-retiro-card__meta {
+    gap: 8px;
+  }
+
+  .enyr-retiro-destacado__image {
+    height: 220px;
+  }
+
+  .enyr-retiro-destacado__body {
+    padding: 0 20px 24px;
+  }
+
+  .enyr-retiros-empty {
+    padding: 32px 20px;
+  }
+
+  .enyr-single-retiro__hero-img {
+    height: 40vh;
+    min-height: 260px;
+  }
+
+  .enyr-single-retiro__hero-overlay {
+    padding-bottom: 32px;
+  }
+
+  .enyr-single-retiro__hero--noimg {
+    padding: 60px 0 40px;
+  }
+
+  .enyr-single-retiro__main {
+    padding: 24px 0 60px;
+  }
+
+  .enyr-single-retiro__info {
+    flex-direction: column;
+    gap: 16px;
+    padding: 16px;
+  }
+
+  .enyr-btn {
+    width: 100%;
+    max-width: 300px;
+    text-align: center;
+    justify-content: center;
+  }
+}

@@ -1,0 +1,267 @@
+/* =============================================
+   RETIROS PAGE — /retiros/
+   ============================================= */
+
+/* ---- KADENCE OVERRIDES ---- */
+body.page-id-1647 .content-area {
+  margin-top: 0 !important;
+}
+body.page-id-1647 .entry-content-wrap,
+body.page-id-1647 .entry-content {
+  padding-top: 0 !important;
+}
+
+/* ---- HERO ---- */
+.enyr-hero {
+  text-align: center;
+  padding: 80px 40px 60px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.enyr-hero__title {
+  font-family: Gilda Display, serif;
+  font-size: clamp(36px, 5vw, 56px);
+  color: #3D3229;
+  line-height: 1.1;
+  margin: 0 0 20px 0;
+}
+
+.enyr-hero__subtitle {
+  font-family: Raleway, sans-serif;
+  font-size: clamp(17px, 2vw, 20px);
+  color: #5C4F43;
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* ---- CONTAINER ---- */
+.enyr-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+/* ---- INTRO ---- */
+.enyr-intro {
+  padding: 0 40px 60px;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.enyr-intro__text {
+  font-family: Raleway, sans-serif;
+  font-size: 18px;
+  color: #5C4F43;
+  line-height: 1.8;
+  margin: 0;
+}
+
+/* ---- RETIROS SECTION ---- */
+.enyr-retiros {
+  padding: 40px 0 80px;
+}
+
+.enyr-retiros__grid {
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+}
+
+/* ---- RETIRO CARD ---- */
+.enyr-retiro {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.enyr-retiro--reverse {
+  direction: rtl;
+}
+
+.enyr-retiro--reverse .enyr-retiro__content {
+  direction: ltr;
+}
+
+.enyr-retiro--reverse .enyr-retiro__image-wrap {
+  direction: ltr;
+}
+
+.enyr-retiro__image {
+  width: 100%;
+  height: 480px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 12px;
+  display: block;
+}
+
+.enyr-retiro__eyebrow {
+  font-family: Cabin, sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #6B7F59;
+  margin-bottom: 16px;
+}
+
+.enyr-retiro__title {
+  font-family: Gilda Display, serif;
+  font-size: clamp(28px, 3.5vw, 42px);
+  color: #3D3229;
+  line-height: 1.1;
+  margin: 0 0 24px 0;
+}
+
+.enyr-retiro__text {
+  font-family: Raleway, sans-serif;
+  font-size: 16px;
+  color: #5C4F43;
+  line-height: 1.8;
+  margin: 0 0 16px 0;
+}
+
+.enyr-retiro__text:last-of-type {
+  margin-bottom: 24px;
+}
+
+.enyr-retiro__highlights {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 32px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.enyr-retiro__highlights li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: Cabin, sans-serif;
+  font-size: 15px;
+  color: #5C4F43;
+}
+
+.enyr-retiro__highlight-icon {
+  color: #6B7F59;
+  flex-shrink: 0;
+}
+
+/* ---- BUTTONS ---- */
+.enyr-btn {
+  display: inline-flex;
+  align-items: center;
+  font-family: Cabin, sans-serif;
+  font-weight: 500;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+  padding: 14px 32px;
+  font-size: 15px;
+}
+
+.enyr-btn--primary {
+  background: #6B7F59;
+  color: #fff;
+}
+
+.enyr-btn--primary:hover {
+  background: #8B9F72;
+  color: #fff;
+  text-decoration: none;
+}
+
+.enyr-btn--large {
+  padding: 18px 40px;
+  font-size: 16px;
+}
+
+/* ---- SEPARATOR ---- */
+.enyr-retiros-separator {
+  padding: 0 0 48px;
+}
+
+.enyr-retiros-separator__line {
+  width: 60px;
+  height: 2px;
+  background: #D4C9BE;
+  margin: 0 auto;
+}
+
+/* ---- CTA SECTION ---- */
+.enyr-cta {
+  text-align: center;
+  padding: 80px 40px;
+  background: #f5f2ee;
+}
+
+.enyr-cta__title {
+  font-family: Gilda Display, serif;
+  font-size: clamp(28px, 3vw, 40px);
+  color: #3D3229;
+  margin: 0 0 16px 0;
+}
+
+.enyr-cta__text {
+  font-family: Raleway, sans-serif;
+  font-size: 18px;
+  color: #5C4F43;
+  line-height: 1.7;
+  margin: 0 0 32px 0;
+}
+
+/* ---- RESPONSIVE ---- */
+@media (max-width: 900px) {
+  .enyr-retiro {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .enyr-retiro--reverse {
+    direction: ltr;
+  }
+  .enyr-retiro__image {
+    height: 340px;
+    max-width: 480px;
+    margin: 0 auto;
+  }
+  .enyr-hero {
+    padding: 60px 32px 40px;
+  }
+  .enyr-intro {
+    padding: 0 32px 40px;
+  }
+  .enyr-container {
+    padding: 0 32px;
+  }
+  .enyr-cta {
+    padding: 60px 32px;
+  }
+}
+
+@media (max-width: 480px) {
+  .enyr-hero {
+    padding: 48px 20px 32px;
+  }
+  .enyr-intro {
+    padding: 0 20px 32px;
+  }
+  .enyr-container {
+    padding: 0 20px;
+  }
+  .enyr-retiro__image {
+    height: 260px;
+  }
+  .enyr-cta {
+    padding: 48px 20px;
+  }
+  .enyr-btn {
+    width: 100%;
+    max-width: 300px;
+    text-align: center;
+    justify-content: center;
+  }
+}

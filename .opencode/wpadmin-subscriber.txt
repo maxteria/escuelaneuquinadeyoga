@@ -1,0 +1,65 @@
+uid=84_0 RootWebArea "Escritorio < Escuela Neuquina de Yoga — WordPress" url="http://escuelaneuquinadeyoga.local/wp-admin/"
+  uid=84_1 navigation "Menú principal"
+    uid=84_2 link "Saltar al contenido principal" url="http://escuelaneuquinadeyoga.local/wp-admin/#wpbody-content"
+      uid=84_3 StaticText "Saltar al contenido principal"
+    uid=84_4 link "Ir a la barra de herramientas" url="http://escuelaneuquinadeyoga.local/wp-admin/#wp-toolbar"
+      uid=84_5 StaticText "Ir a la barra de herramientas"
+    uid=84_6 link "Escritorio" url="http://escuelaneuquinadeyoga.local/wp-admin/index.php"
+      uid=84_7 StaticText "Escritorio"
+    uid=84_8 link "Perfil" url="http://escuelaneuquinadeyoga.local/wp-admin/profile.php"
+      uid=84_9 StaticText "Perfil"
+    uid=84_10 button "Contraer el menú principal" expandable expanded
+  uid=84_11 navigation "Barra de herramientas"
+    uid=84_12 menu orientation="vertical"
+      uid=84_13 menuitem "Acerca de WordPress" expandable
+      uid=84_14 menuitem "Escuela Neuquina de Yoga" expandable
+    uid=84_15 menu orientation="vertical"
+      uid=84_16 menuitem "Hola, Alumno Demo" expandable
+  uid=84_17 main
+    uid=84_18 button "Opciones de pantalla" expandable
+    uid=84_19 button "Ayuda" expandable
+    uid=84_20 heading "Escritorio" level="1"
+    uid=84_21 heading "Actividad" level="2"
+    uid=84_22 button "Subir" description="Mover la caja Actividad arriba" disableable disabled
+    uid=84_23 button "Bajar" description="Mover la caja Actividad abajo"
+    uid=84_24 button "Alternar panel: Actividad" expandable expanded
+    uid=84_25 StaticText "¡Todavía no hay actividad!"
+    uid=84_26 heading "Eventos y noticias de WordPress" level="2"
+    uid=84_27 button "Subir" description="Mover la caja Eventos y noticias de WordPress arriba"
+    uid=84_28 button "Bajar" description="Mover la caja Eventos y noticias de WordPress abajo"
+    uid=84_29 button "Alternar panel: Eventos y noticias de WordPress" expandable expanded
+    uid=84_30 StaticText "Introduce la ciudad más cercana a ti para encontrar futuros eventos."
+    uid=84_31 button "Seleccionar la ubicación" expandable expanded
+    uid=84_32 StaticText "Ciudad:"
+    uid=84_33 textbox "Ciudad:"
+    uid=84_34 button "Enviar"
+    uid=84_35 button "Cancelar" expandable expanded
+    uid=84_36 link "El Slack de Make WordPress se abre a las comunidades locales" url="https://es.wordpress.org/2026/05/08/el-slack-de-make-wordpress-se-abre-a-las-comunidades-locales/"
+      uid=84_37 StaticText "El Slack de Make WordPress se abre a las comunidades locales"
+    uid=84_38 link "WordCamp Europe 2026: Cracovia nos espera (y la Península Ibérica va con todo)" url="https://es.wordpress.org/2026/05/08/wordcamp-europe-2026-cracovia-nos-espera-y-la-peninsula-iberica-va-con-todo/"
+      uid=84_39 StaticText "WordCamp Europe 2026: Cracovia nos espera (y la Península Ibérica va con todo)"
+    uid=84_40 link "Open Channels FM: TYPO3’s Unique Structure and Global Expansion in Open Source CMS" url="https://openchannels.fm/typo3s-unique-structure-and-global-expansion-in-open-source-cms/"
+      uid=84_41 StaticText "Open Channels FM: TYPO3’s Unique Structure and Global Expansion in Open Source CMS"
+    uid=84_42 link "Open Channels FM: Why Smaller Tech Meetups Hit Different" url="https://openchannels.fm/why-smaller-tech-meetups-hit-different/"
+      uid=84_43 StaticText "Open Channels FM: Why Smaller Tech Meetups Hit Different"
+    uid=84_44 link "Gutenberg Times: WordPress 7.0 Source of Truth" url="https://gutenbergtimes.com/wordpress-7-0-source-of-truth/"
+      uid=84_45 StaticText "Gutenberg Times: WordPress 7.0 Source of Truth"
+    uid=84_46 link "Meetups (abre en una nueva pestaña)" url="https://make.wordpress.org/community/meetups-landing-page"
+      uid=84_47 StaticText "Meetups "
+      uid=84_48 StaticText "(abre en una nueva pestaña)"
+    uid=84_49 StaticText " | "
+    uid=84_50 link "WordCamps (abre en una nueva pestaña)" url="https://central.wordcamp.org/schedule/"
+      uid=84_51 StaticText "WordCamps "
+      uid=84_52 StaticText "(abre en una nueva pestaña)"
+    uid=84_53 StaticText " | "
+    uid=84_54 link "Noticias (abre en una nueva pestaña)" url="https://es.wordpress.org/news/"
+      uid=84_55 StaticText "Noticias "
+      uid=84_56 StaticText "(abre en una nueva pestaña)"
+  uid=84_57 contentinfo
+    uid=84_58 StaticText "Gracias por crear con "
+    uid=84_59 link "WordPress" url="https://es.wordpress.org/"
+      uid=84_60 StaticText "WordPress"
+    uid=84_61 StaticText "."
+    uid=84_62 StaticText "Versión 6.9.4"
+  uid=84_63 generic atomic live="assertive" relevant="additions text"
+  uid=84_64 generic atomic live="polite" relevant="additions text"

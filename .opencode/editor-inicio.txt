@@ -1,0 +1,80 @@
+uid=88_0 RootWebArea "Editar la página «Inicio» < Escuela Neuquina de Yoga — WordPress" url="http://escuelaneuquinadeyoga.local/wp-admin/post.php?post=1483&action=edit"
+  uid=88_1 main
+    uid=88_2 heading "Editar la página" level="1"
+    uid=88_3 region "Barra superior del editor"
+      uid=88_4 generic
+        uid=88_5 link "Ver páginas" url="http://escuelaneuquinadeyoga.local/wp-admin/edit.php?post_type=page"
+          uid=88_6 image "Icono del sitio" url="http://escuelaneuquinadeyoga.local/wp-content/uploads/2026/05/cropped-logo.png"
+      uid=88_7 button "Insertador de bloques" expandable
+      uid=88_8 button "Deshacer" disableable disabled
+      uid=88_9 button "Rehacer" disableable disabled
+      uid=88_10 button "Resumen del documento" expandable
+      uid=88_11 button "Biblioteca de diseño"
+      uid=88_12 button "Inicio · Página de inicio Ctrl+K"
+      uid=88_13 link "Ver la página" url="http://escuelaneuquinadeyoga.local/"
+      uid=88_14 generic
+        uid=88_15 button "Ver" expandable haspopup="menu"
+      uid=88_16 button "Página Ajustes" expandable
+      uid=88_17 button "Controles de los bloques de Kadence" expandable
+      uid=88_18 button "Ajustes" expandable expanded pressed
+      uid=88_19 button "Guardar"
+      uid=88_20 generic
+        uid=88_21 button "Opciones" expandable haspopup="menu"
+    uid=88_22 region "Contenido del editor"
+      uid=88_23 generic
+      uid=88_24 Iframe "Lienzo del editor"
+        uid=88_25 RootWebArea url="blob:http://escuelaneuquinadeyoga.local/efb794d3-b23b-45cf-aa60-dad94d90e8e1"
+          uid=88_26 generic
+            uid=88_27 textbox "Escribe un título" multiline value="Inicio"
+              uid=88_28 StaticText "Inicio"
+            uid=88_29 generic
+              uid=88_30 button "Añadir bloque por defecto"
+              uid=88_31 generic
+                uid=88_32 button "Añadir un bloque" expandable haspopup="menu"
+            uid=88_33 generic atomic live="assertive" relevant="additions text"
+            uid=88_34 generic atomic live="polite" relevant="additions text"
+      uid=88_35 generic
+      uid=88_36 region "Cajas meta"
+        uid=88_37 button "Cajas meta" expandable
+        uid=88_38 separator "Arrastra para cambiar el tamaño" description="Utiliza las teclas de flecha arriba y abajo para cambiar el tamaño del panel de la caja meta." orientation="horizontal" value="50" valuemax="100" valuemin="0" valuetext=""
+        uid=88_39 StaticText "Utiliza las teclas de flecha arriba y abajo para cambiar el tamaño del panel de la caja meta."
+    uid=88_40 region "Ajustes del editor"
+      uid=88_41 generic
+        uid=88_42 tablist orientation="horizontal"
+          uid=88_43 tab "Página" selectable selected
+          uid=88_44 tab "Bloque" selectable
+        uid=88_45 button "Cerrar ajustes"
+      uid=88_46 heading "Inicio Página de inicio" level="2"
+      uid=88_47 button "Acciones" expandable haspopup="menu"
+      uid=88_48 button "Establecer la imagen destacada" haspopup="dialog"
+      uid=88_49 StaticText "Editado por última vez hace una hora."
+      uid=88_50 StaticText "Estado"
+      uid=88_51 generic
+        uid=88_52 button "Cambiar estado: Publicada" expandable
+      uid=88_53 StaticText "Publicar"
+      uid=88_54 generic
+        uid=88_55 button "Cambiar fecha: Hoy a las 6:19 pm" expandable
+      uid=88_56 StaticText "Enlace"
+      uid=88_57 link "http://escuelaneuquinadeyoga.local/ (abre en una nueva pestaña)" url="http://escuelaneuquinadeyoga.local/"
+        uid=88_58 StaticText "http://escuelaneuquinadeyoga.local/"
+        uid=88_59 StaticText "↗"
+      uid=88_60 StaticText "Autor"
+      uid=88_61 generic
+        uid=88_62 button "Cambiar autor: (Sin autor)" expandable
+      uid=88_63 StaticText "Plantilla"
+      uid=88_64 generic
+        uid=88_65 button "Opciones de plantilla" expandable
+      uid=88_66 StaticText "Comentarios"
+      uid=88_67 generic
+        uid=88_68 button "Cambiar opciones de comentarios" expandable
+      uid=88_69 StaticText "Superior"
+      uid=88_70 generic
+        uid=88_71 button "Cambiar superior: Ninguna" expandable
+      uid=88_72 button "Mover a la papelera"
+    uid=88_73 region "Publicación del editor"
+      uid=88_74 button "Abrir el panel para guardar" disableable disabled expandable haspopup="dialog"
+    uid=88_75 region "Editor del pie de página"
+      uid=88_76 StaticText "Página"
+    uid=88_77 generic
+  uid=88_78 generic atomic live="assertive" relevant="additions text"
+  uid=88_79 generic atomic live="polite" relevant="additions text"

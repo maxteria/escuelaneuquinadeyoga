@@ -1,0 +1,289 @@
+/* =============================================
+   LA ESCUELA PAGE — /la-escuela/
+   ============================================= */
+
+/* ---- KADENCE OVERRIDES ---- */
+body.page-id-1492 .content-area {
+  margin-top: 0 !important;
+}
+body.page-id-1492 .entry-content-wrap,
+body.page-id-1492 .entry-content {
+  padding-top: 0 !important;
+}
+body.page-id-1492 .entry-header,
+body.page-id-1492 .kadence-page-title-wrap,
+body.page-id-1492 .kadence-breadcrumbs {
+  display: none !important;
+}
+
+/* ---- HERO ---- */
+.enye-hero {
+  text-align: center;
+  padding: 80px 40px 60px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.enye-hero__title {
+  font-family: Gilda Display, serif;
+  font-size: clamp(36px, 5vw, 56px);
+  color: #3D3229;
+  line-height: 1.1;
+  margin: 0 0 20px 0;
+}
+
+.enye-hero__subtitle {
+  font-family: Raleway, sans-serif;
+  font-size: clamp(17px, 2vw, 20px);
+  color: #5C4F43;
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* ---- CONTAINER ---- */
+.enye-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.enye-container--narrow {
+  max-width: 800px;
+}
+
+/* ---- SECTIONS ---- */
+.enye-section {
+  padding: 60px 0;
+}
+
+.enye-section--image {
+  padding: 40px 0 80px;
+}
+
+/* ---- 2-COLUMN GRID ---- */
+.enye-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.enye-section--reverse .enye-grid {
+  direction: rtl;
+}
+
+.enye-section--reverse .enye-grid__content {
+  direction: ltr;
+}
+
+.enye-section--reverse .enye-grid__image {
+  direction: ltr;
+}
+
+.enye-grid__photo {
+  width: 100%;
+  height: 480px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 12px;
+  display: block;
+}
+
+.enye-grid__eyebrow {
+  font-family: Cabin, sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #6B7F59;
+  margin-bottom: 16px;
+}
+
+.enye-grid__title {
+  font-family: Gilda Display, serif;
+  font-size: clamp(28px, 3.5vw, 42px);
+  color: #3D3229;
+  line-height: 1.1;
+  margin: 0 0 24px 0;
+}
+
+.enye-grid__text {
+  font-family: Raleway, sans-serif;
+  font-size: 16px;
+  color: #5C4F43;
+  line-height: 1.8;
+  margin: 0 0 16px 0;
+}
+
+.enye-grid__text:last-of-type {
+  margin-bottom: 0;
+}
+
+.enye-grid__highlights {
+  list-style: none;
+  padding: 0;
+  margin: 24px 0 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.enye-grid__highlights li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: Cabin, sans-serif;
+  font-size: 15px;
+  color: #5C4F43;
+}
+
+.enye-grid__highlight-icon {
+  color: #6B7F59;
+  flex-shrink: 0;
+}
+
+/* ---- FEATURES GRID ---- */
+.enye-features {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  margin-top: 40px;
+}
+
+.enye-feature {
+  text-align: center;
+}
+
+.enye-feature__title {
+  font-family: Gilda Display, serif;
+  font-size: 22px;
+  color: #3D3229;
+  margin: 0 0 12px 0;
+}
+
+.enye-feature__text {
+  font-family: Raleway, sans-serif;
+  font-size: 15px;
+  color: #5C4F43;
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* ---- BUTTONS ---- */
+.enye-btn {
+  display: inline-flex;
+  align-items: center;
+  font-family: Cabin, sans-serif;
+  font-weight: 500;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+  padding: 14px 32px;
+  font-size: 15px;
+}
+
+.enye-btn--primary {
+  background: #6B7F59;
+  color: #fff;
+}
+
+.enye-btn--primary:hover {
+  background: #8B9F72;
+  color: #fff;
+  text-decoration: none;
+}
+
+.enye-btn--outline-dark {
+  background: transparent;
+  color: #3D3229;
+  border: 2px solid #3D3229;
+}
+
+.enye-btn--outline-dark:hover {
+  background: #3D3229;
+  color: #fff;
+  text-decoration: none;
+}
+
+/* ---- CTA SECTION ---- */
+.enye-cta {
+  text-align: center;
+  padding: 80px 40px;
+  background: #f5f2ee;
+}
+
+.enye-cta__title {
+  font-family: Gilda Display, serif;
+  font-size: clamp(28px, 3vw, 40px);
+  color: #3D3229;
+  margin: 0 0 16px 0;
+}
+
+.enye-cta__text {
+  font-family: Raleway, sans-serif;
+  font-size: 18px;
+  color: #5C4F43;
+  line-height: 1.7;
+  margin: 0 0 32px 0;
+}
+
+.enye-cta__buttons {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* ---- RESPONSIVE ---- */
+@media (max-width: 900px) {
+  .enye-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .enye-section--reverse .enye-grid {
+    direction: ltr;
+  }
+  .enye-grid__photo {
+    height: 340px;
+    max-width: 480px;
+    margin: 0 auto;
+  }
+  .enye-hero {
+    padding: 60px 32px 40px;
+  }
+  .enye-container {
+    padding: 0 32px;
+  }
+  .enye-cta {
+    padding: 60px 32px;
+  }
+  .enye-features {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+}
+
+@media (max-width: 480px) {
+  .enye-hero {
+    padding: 48px 20px 32px;
+  }
+  .enye-container {
+    padding: 0 20px;
+  }
+  .enye-grid__photo {
+    height: 260px;
+  }
+  .enye-cta {
+    padding: 48px 20px;
+  }
+  .enye-btn {
+    width: 100%;
+    max-width: 300px;
+    text-align: center;
+    justify-content: center;
+  }
+  .enye-cta__buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+}

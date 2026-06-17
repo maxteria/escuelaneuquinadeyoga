@@ -1,0 +1,30 @@
+uid=80_0 RootWebArea "Cursos – Escuela Neuquina de Yoga" url="http://escuelaneuquinadeyoga.local/courses/"
+  uid=80_1 navigation "Barra de herramientas"
+    uid=80_2 menu orientation="vertical"
+      uid=80_3 menuitem "Escuela Neuquina de Yoga" expandable
+      uid=80_4 menuitem "Personalizar"
+      uid=80_5 menuitem "0 comentarios en moderación"
+      uid=80_6 menuitem "Añadir" expandable
+    uid=80_7 menu orientation="vertical"
+      uid=80_8 menuitem "Hola, maxteria" expandable
+  uid=80_9 link "Saltar al contenido" url="http://escuelaneuquinadeyoga.local/courses/#main"
+    uid=80_10 StaticText "Saltar al contenido"
+  uid=80_11 banner
+    uid=80_12 link "Escuela Neuquina de Yoga Escuela Neuquina de Yoga" url="http://escuelaneuquinadeyoga.local/"
+      uid=80_13 image "Escuela Neuquina de Yoga" url="http://escuelaneuquinadeyoga.local/wp-content/uploads/2026/05/cropped-cropped-logo.png"
+      uid=80_14 StaticText "Escuela Neuquina de Yoga"
+    uid=80_15 button "Abrir menú" expandable
+  uid=80_16 main
+    uid=80_17 heading "Cursos" level="1"
+    uid=80_18 link "LearnDash 101" url="http://escuelaneuquinadeyoga.local/courses/learndash-101/"
+      uid=80_19 StaticText "LearnDash 101"
+    uid=80_20 link "LEER MÁS LEARNDASH 101" url="http://escuelaneuquinadeyoga.local/courses/learndash-101/"
+      uid=80_21 StaticText "LEER MÁS"
+      uid=80_22 StaticText "LEARNDASH 101"
+  uid=80_23 contentinfo
+    uid=80_24 StaticText "Un espacio de estudio, práctica y profundización, donde el aprendizaje se construye desde la experiencia."
+    uid=80_25 StaticText "Escuela Neuquina de Yoga — Formación integral en yoga"
+    uid=80_26 link "Instagram" url="http://escuelaneuquinadeyoga.local/courses/"
+      uid=80_27 image "Instagram"
+    uid=80_28 link "WhatsApp" url="http://escuelaneuquinadeyoga.local/courses/"
+      uid=80_29 image "WhatsApp"

@@ -1,0 +1,679 @@
+/* ============================================
+   Aula Virtual — Layout & Dashboard
+   ============================================ */
+
+:root {
+    --aula-background: #f8f5f0;
+    --aula-card-bg: #ffffff;
+    --aula-border: #e7e1d9;
+    --aula-text: #3d3229;
+    --aula-muted: #6e6256;
+    --aula-accent: #6b7f59;
+    --aula-accent-dark: #4f6143;
+    --aula-success: #4f805d;
+    --aula-warning: #c77b37;
+    --aula-radius-lg: 20px;
+    --aula-radius-md: 16px;
+    --aula-radius-sm: 10px;
+    --aula-shadow-sm: 0 12px 32px rgba(61, 50, 41, 0.12);
+    --aula-shadow-xs: 0 4px 16px rgba(61, 50, 41, 0.08);
+    --aula-gradient: linear-gradient(135deg, rgba(107, 127, 89, 0.10) 0%, rgba(107, 127, 89, 0.20) 100%);
+}
+
+/* Reset header chrome on /aula/ */
+body.page-id-1652 .page-header,
+body.page-id-1652 .entry-header,
+body.page-id-1652 .kadence-page-title-wrap,
+body.page-id-1652 .kadence-breadcrumbs {
+    display: none !important;
+}
+
+body.page-id-1652 .content-container > article,
+body.page-id-1652 .content-container,
+body.page-id-1652 .entry-content-wrap,
+body.page-id-1652 .site-main > .content-container > article {
+    padding-top: 0;
+    box-shadow: none;
+    border: none;
+    background: transparent;
+}
+
+.screen-reader-text {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* --------------------------------------------
+   Guest Hero
+   -------------------------------------------- */
+
+.enya-aula-hero {
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    background: var(--aula-background);
+}
+
+.enya-aula-hero__inner {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 64px;
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 96px 48px;
+    align-items: center;
+}
+
+.enya-aula-hero__content {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.enya-aula-hero__eyebrow {
+    font-family: "Cabin", sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    color: var(--aula-accent);
+}
+
+.enya-aula-hero__title {
+    font-family: "Gilda Display", serif;
+    font-size: clamp(40px, 4vw, 56px);
+    line-height: 1.08;
+    color: var(--aula-text);
+    margin: 0;
+    font-weight: 400;
+}
+
+.enya-aula-hero__text {
+    font-family: "Raleway", sans-serif;
+    font-size: 18px;
+    line-height: 1.75;
+    color: var(--aula-muted);
+    max-width: 540px;
+    margin: 0;
+}
+
+.enya-aula-hero__cta {
+    margin-top: 12px;
+}
+
+.enya-aula-hero__cta .learndash-wrapper .ld-login-button {
+    background: var(--aula-accent) !important;
+    color: #fff !important;
+    border-radius: 999px !important;
+    padding: 18px 44px !important;
+    font-family: "Cabin", sans-serif !important;
+    font-size: 16px !important;
+    font-weight: 500 !important;
+    letter-spacing: 0.3px !important;
+    box-shadow: var(--aula-shadow-xs) !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 10px !important;
+    transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+}
+
+.enya-aula-hero__cta .learndash-wrapper .ld-login-button:hover,
+.enya-aula-hero__cta .learndash-wrapper .ld-login-button:focus {
+    transform: translateY(-1px);
+    box-shadow: 0 18px 34px rgba(107, 127, 89, 0.25) !important;
+    background: var(--aula-accent-dark) !important;
+}
+
+.enya-aula-hero__footnote {
+    font-family: "Raleway", sans-serif;
+    font-size: 14px;
+    line-height: 1.7;
+    color: #8b8173;
+    max-width: 420px;
+    margin: 0;
+}
+
+.enya-aula-hero__visual {
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.enya-aula-hero__image-wrapper {
+    position: relative;
+    border-radius: var(--aula-radius-lg);
+    overflow: hidden;
+    width: 100%;
+    max-width: 520px;
+    aspect-ratio: 4 / 3;
+    box-shadow: var(--aula-shadow-sm);
+    background: #ece6df;
+}
+
+.enya-aula-hero__image-wrapper::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(140deg, rgba(248, 245, 240, 0.1), rgba(107, 127, 89, 0.24));
+    pointer-events: none;
+}
+
+.enya-aula-hero__image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* --------------------------------------------
+   Aula Dashboard
+   -------------------------------------------- */
+
+.aula-dashboard {
+    background: var(--aula-background);
+    padding: 80px clamp(20px, 4vw, 48px) 120px;
+}
+
+.aula-dashboard__header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 32px;
+    margin-bottom: 48px;
+}
+
+.aula-dashboard__heading {
+    max-width: 560px;
+}
+
+.aula-dashboard__eyebrow {
+    font-family: "Cabin", sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--aula-accent);
+    margin: 0 0 14px;
+}
+
+.aula-dashboard__title {
+    font-family: "Gilda Display", serif;
+    font-size: clamp(36px, 4.5vw, 52px);
+    line-height: 1.08;
+    color: var(--aula-text);
+    margin: 0 0 16px;
+}
+
+.aula-dashboard__subtitle {
+    font-family: "Raleway", sans-serif;
+    font-size: 18px;
+    line-height: 1.7;
+    color: var(--aula-muted);
+    margin: 0;
+}
+
+.aula-dashboard__cta-group {
+    display: inline-flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.aula-dashboard__cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 28px;
+    border-radius: 999px;
+    font-family: "Cabin", sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    color: #fff;
+    background: var(--aula-accent);
+    text-decoration: none;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.aula-dashboard__cta:hover,
+.aula-dashboard__cta:focus {
+    background: var(--aula-accent-dark);
+    transform: translateY(-1px);
+}
+
+.aula-dashboard__cta--ghost {
+    background: rgba(107, 127, 89, 0.14);
+    color: var(--aula-accent);
+}
+
+.aula-dashboard__cta--ghost:hover,
+.aula-dashboard__cta--ghost:focus {
+    background: rgba(107, 127, 89, 0.22);
+}
+
+.aula-dashboard__alert {
+    border-radius: var(--aula-radius-md);
+    background: #fef6ed;
+    border: 1px solid #f2d2a3;
+    padding: 24px 28px;
+    font-family: "Raleway", sans-serif;
+    color: #9b6632;
+    display: grid;
+    gap: 8px;
+    margin-bottom: 40px;
+}
+
+.aula-dashboard__alert-link {
+    font-weight: 600;
+    color: #9b6632;
+    text-decoration: underline;
+}
+
+.aula-section {
+    margin-bottom: 56px;
+}
+
+.aula-section__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.aula-section__title {
+    font-family: "Gilda Display", serif;
+    font-size: 28px;
+    margin: 0;
+    color: var(--aula-text);
+}
+
+.aula-section__meta {
+    font-family: "Raleway", sans-serif;
+    font-size: 15px;
+    color: var(--aula-muted);
+    margin: 0;
+}
+
+.aula-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 28px;
+}
+
+.aula-card {
+    background: var(--aula-card-bg);
+    border-radius: var(--aula-radius-md);
+    border: 1px solid rgba(66, 52, 39, 0.08);
+    padding: 28px;
+    box-shadow: var(--aula-shadow-xs);
+    display: grid;
+    gap: 18px;
+    min-height: 260px;
+}
+
+.aula-card--completed {
+    background: linear-gradient(140deg, rgba(248, 245, 240, 0.92), rgba(248, 245, 240, 0.98));
+}
+
+.aula-card__status {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 16px;
+}
+
+.aula-card__badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 14px;
+    border-radius: 999px;
+    font-family: "Cabin", sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    background: rgba(107, 127, 89, 0.16);
+    color: var(--aula-accent-dark);
+}
+
+.aula-card__badge--success {
+    background: rgba(79, 128, 93, 0.16);
+    color: var(--aula-success);
+}
+
+.aula-card__last-activity {
+    font-family: "Raleway", sans-serif;
+    font-size: 13px;
+    color: #8a7f71;
+}
+
+.aula-card__title {
+    font-family: "Gilda Display", serif;
+    font-size: 22px;
+    color: var(--aula-text);
+    margin: 0;
+}
+
+.aula-card__progress {
+    display: grid;
+    gap: 12px;
+    font-family: "Raleway", sans-serif;
+    font-size: 14px;
+    color: var(--aula-muted);
+}
+
+.aula-card__progress-track {
+    position: relative;
+    width: 100%;
+    height: 10px;
+    border-radius: 999px;
+    background: rgba(107, 127, 89, 0.16);
+    overflow: hidden;
+}
+
+.aula-card__progress-fill {
+    position: absolute;
+    inset: 0;
+    width: calc(var(--progress, 0) * 1%);
+    background: linear-gradient(90deg, var(--aula-accent) 0%, var(--aula-accent-dark) 100%);
+    border-radius: inherit;
+    transition: width 0.3s ease;
+}
+
+.aula-card__progress-label {
+    font-weight: 600;
+    color: var(--aula-accent);
+}
+
+.aula-card__summary {
+    font-family: "Raleway", sans-serif;
+    font-size: 15px;
+    color: var(--aula-muted);
+    margin: 0;
+}
+
+.aula-card__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.aula-card__btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 22px;
+    border-radius: 999px;
+    font-family: "Cabin", sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.aula-card__btn--primary {
+    background: var(--aula-accent);
+    color: #fff;
+    box-shadow: var(--aula-shadow-xs);
+}
+
+.aula-card__btn--primary:hover,
+.aula-card__btn--primary:focus {
+    background: var(--aula-accent-dark);
+    transform: translateY(-1px);
+}
+
+.aula-card__btn--ghost {
+    background: rgba(107, 127, 89, 0.12);
+    color: var(--aula-accent);
+}
+
+.aula-card__btn--ghost:hover,
+.aula-card__btn--ghost:focus {
+    background: rgba(107, 127, 89, 0.20);
+}
+
+.aula-card__btn--outline {
+    border: 1px solid rgba(107, 127, 89, 0.32);
+    color: var(--aula-accent);
+    background: transparent;
+}
+
+.aula-card__btn--outline:hover,
+.aula-card__btn--outline:focus {
+    background: rgba(107, 127, 89, 0.08);
+}
+
+.aula-empty {
+    margin-top: 32px;
+    padding: clamp(36px, 6vw, 56px);
+    border-radius: var(--aula-radius-lg);
+    background: var(--aula-card-bg);
+    border: 1px dashed rgba(107, 127, 89, 0.30);
+    text-align: center;
+    box-shadow: var(--aula-shadow-xs);
+    display: grid;
+    gap: 18px;
+}
+
+.aula-empty__title {
+    font-family: "Gilda Display", serif;
+    font-size: clamp(26px, 3.2vw, 36px);
+    color: var(--aula-text);
+    margin: 0;
+}
+
+.aula-empty__text {
+    font-family: "Raleway", sans-serif;
+    font-size: 17px;
+    color: var(--aula-muted);
+    margin: 0;
+}
+
+.aula-empty__cta {
+    justify-self: center;
+    display: inline-flex;
+    align-items: center;
+    padding: 14px 28px;
+    border-radius: 999px;
+    background: var(--aula-accent);
+    color: #fff;
+    font-family: "Cabin", sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: background 0.2s ease;
+}
+
+.aula-empty__cta:hover,
+.aula-empty__cta:focus {
+    background: var(--aula-accent-dark);
+}
+
+/* --------------------------------------------
+   Restricted gateway card (non-students)
+   -------------------------------------------- */
+
+.aula-gateway {
+    background: var(--aula-background);
+    padding: clamp(48px, 6vw, 80px) clamp(20px, 5vw, 48px);
+}
+
+.aula-gateway__card {
+    max-width: 520px;
+    margin: 0 auto;
+    background: var(--aula-card-bg);
+    border-radius: var(--aula-radius-lg);
+    border: 1px solid rgba(66, 52, 39, 0.08);
+    padding: 48px clamp(28px, 4vw, 52px);
+    box-shadow: var(--aula-shadow-sm);
+    text-align: center;
+    display: grid;
+    gap: 18px;
+}
+
+.aula-gateway__avatar {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    background: var(--aula-accent);
+    color: #fff;
+    font-family: "Cabin", sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.aula-gateway__title {
+    font-family: "Gilda Display", serif;
+    font-size: 30px;
+    color: var(--aula-text);
+    margin: 0;
+}
+
+.aula-gateway__text {
+    font-family: "Raleway", sans-serif;
+    font-size: 16px;
+    line-height: 1.65;
+    color: var(--aula-muted);
+    margin: 0;
+}
+
+.aula-gateway__actions {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.aula-gateway__btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 13px 28px;
+    border-radius: 999px;
+    font-family: "Cabin", sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.aula-gateway__btn--primary {
+    background: var(--aula-accent);
+    color: #fff;
+}
+
+.aula-gateway__btn--primary:hover,
+.aula-gateway__btn--primary:focus {
+    background: var(--aula-accent-dark);
+    transform: translateY(-1px);
+}
+
+.aula-gateway__btn--ghost {
+    background: rgba(107, 127, 89, 0.12);
+    color: var(--aula-accent);
+}
+
+.aula-gateway__btn--ghost:hover,
+.aula-gateway__btn--ghost:focus {
+    background: rgba(107, 127, 89, 0.2);
+}
+
+/* --------------------------------------------
+   Responsive adjustments
+   -------------------------------------------- */
+
+@media (max-width: 1024px) {
+    .enya-aula-hero__inner {
+        grid-template-columns: 1fr;
+        gap: 48px;
+        padding: 72px 32px;
+    }
+
+    .enya-aula-hero__content {
+        align-items: center;
+        text-align: center;
+    }
+
+    .enya-aula-hero__text,
+    .enya-aula-hero__footnote {
+        max-width: 100%;
+    }
+
+    .enya-aula-hero__visual {
+        order: -1;
+    }
+
+    .aula-dashboard__cta-group {
+        width: 100%;
+        justify-content: flex-start;
+    }
+}
+
+@media (max-width: 768px) {
+    .aula-dashboard {
+        padding: 64px 20px 96px;
+    }
+
+    .aula-dashboard__header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .aula-dashboard__cta-group {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .aula-card {
+        padding: 24px;
+    }
+
+    .aula-card__status {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .aula-gateway__card {
+        padding: 40px 24px;
+    }
+}
+
+@media (max-width: 540px) {
+    .aula-dashboard,
+    .aula-gateway {
+        padding: 48px 16px 72px;
+    }
+
+    .aula-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .aula-card__actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .aula-card__btn {
+        width: 100%;
+    }
+
+    .aula-dashboard__cta-group {
+        width: 100%;
+    }
+
+    .aula-dashboard__cta {
+        width: 100%;
+        justify-content: center;
+    }
+}

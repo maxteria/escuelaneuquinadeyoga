@@ -1,0 +1,742 @@
+/* =============================================
+   /courses/ LANDING — KADENCE OVERRIDES
+   ============================================= */
+
+/* Eliminar subheader genérico de Kadence (título de página + migas de pan) */
+body.enyf-courses .entry-header,
+body.enyf-courses .kadence-page-title-wrap,
+body.enyf-courses .kadence-page-title-alignment-center,
+body.enyf-courses .kadence-breadcrumbs {
+  display: none !important;
+}
+
+/* Eliminar gap que deja Kadence en el top del contenido */
+body.enyf-courses .content-area {
+  margin-top: 0 !important;
+}
+body.enyf-courses .entry-content-wrap {
+  padding-top: 0 !important;
+}
+body.enyf-courses .entry-content {
+  margin-top: 0 !important;
+}
+
+/* HERO: full-width, pegado al header, con imagen de fondo */
+body.enyf-courses .enyf-hero {
+  width: 100%;
+  max-width: none;
+  min-height: 80vh;
+  padding: 80px 24px 100px;
+  justify-content: flex-end;
+  background-image:
+    linear-gradient(to top, rgba(250,247,244,0.98) 0%, rgba(250,247,244,0.75) 25%, rgba(250,247,244,0.35) 55%, rgba(250,247,244,0.1) 80%, transparent 100%),
+    url('http://escuelaneuquinadeyoga.local/wp-content/uploads/2026/05/escuela-neuquiena-de-yoga-01.png');
+  background-size: cover, cover;
+  background-position: center center, center center;
+  background-repeat: no-repeat, no-repeat;
+}
+
+
+
+/* El contenido interno del hero centrado y legible */
+body.enyf-courses .enyf-hero__eyebrow,
+body.enyf-courses .enyf-hero__title,
+body.enyf-courses .enyf-hero__subtitle,
+body.enyf-courses .enyf-hero__ctas {
+  position: relative;
+  z-index: 2;
+}
+
+/* HERO: ajustes de tipografía para overlay sobre imagen */
+body.enyf-courses .enyf-hero__eyebrow {
+  font-family: Cabin, sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #6B7F59;
+  margin-bottom: 16px;
+}
+
+body.enyf-courses .enyf-hero__title {
+  font-family: Gilda Display, serif;
+  font-size: clamp(36px, 5vw, 60px);
+  color: #3D3229;
+  line-height: 1.1;
+  margin: 0 0 20px 0;
+  text-shadow: 0 1px 4px rgba(250,247,244,0.8);
+}
+
+body.enyf-courses .enyf-hero__subtitle {
+  font-family: Raleway, sans-serif;
+  font-size: clamp(16px, 2vw, 20px);
+  color: #5C4F43;
+  line-height: 1.75;
+  max-width: 600px;
+  margin: 0 auto 36px;
+  text-shadow: 0 1px 4px rgba(250,247,244,0.8);
+}
+
+/* HERO: CTAs con buen contraste sobre imagen */
+body.enyf-courses .enyf-cta__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: Cabin, sans-serif;
+  font-weight: 500;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+  padding: 14px 32px;
+  font-size: 15px;
+}
+
+body.enyf-courses .enyf-cta__btn--white {
+  background: #6B7F59;
+  color: #fff;
+}
+
+body.enyf-courses .enyf-cta__btn--white:hover {
+  background: #8B9F72;
+  color: #fff;
+  text-decoration: none;
+}
+
+body.enyf-courses .enyf-cta__btn--outline-white {
+  background: transparent;
+  color: #3D3229;
+  border: 2px solid rgba(61,50,41,0.4);
+}
+
+body.enyf-courses .enyf-cta__btn--outline-white:hover {
+  background: rgba(107,127,89,0.1);
+  color: #3D3229;
+  border-color: #6B7F59;
+  text-decoration: none;
+}
+
+/* Mobile: hero ocupa más altura */
+@media (max-width: 768px) {
+  body.enyf-courses .enyf-hero {
+    min-height: 65vh;
+    padding: 60px 20px 80px;
+    background-image:
+      linear-gradient(to top, rgba(250,247,244,1) 0%, rgba(250,247,244,0.85) 35%, rgba(250,247,244,0.5) 65%, rgba(250,247,244,0.2) 100%),
+      url('http://escuelaneuquinadeyoga.local/wp-content/uploads/2026/05/escuela-neuquiena-de-yoga-07.png');
+    background-size: cover, cover;
+    background-position: center center, center center;
+    justify-content: center;
+  }
+}
+
+/* =============================================
+   FORMACIONES LANDING PAGE STYLES
+   ============================================= */
+
+.enyf-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.enyf-section {
+  padding: 80px 0;
+}
+
+/* HERO */
+.enyf-hero {
+  position: relative;
+  min-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+  background: linear-gradient(160deg, #faf7f4 0%, #f0ede8 100%);
+  padding: 100px 24px 80px;
+}
+
+.enyf-hero__eyebrow {
+  font-family: Cabin, sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #6B7F59;
+  margin-bottom: 20px;
+}
+
+.enyf-hero__title {
+  font-family: Gilda Display, serif;
+  font-size: clamp(36px, 5vw, 56px);
+  color: #3D3229;
+  line-height: 1.15;
+  margin: 0 0 24px 0;
+}
+
+.enyf-hero__subtitle {
+  font-family: Raleway, sans-serif;
+  font-size: clamp(16px, 2vw, 20px);
+  color: #5C4F43;
+  line-height: 1.75;
+  max-width: 620px;
+  margin: 0 auto 40px;
+}
+
+.enyf-hero__ctas {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* INTRO — first section after header (hero removed) */
+.enyf-intro--first {
+  padding-top: 100px;
+}
+
+/* INTRO */
+.enyf-intro {
+  background: #fff;
+  text-align: center;
+}
+
+.enyf-intro__title {
+  font-family: Gilda Display, serif;
+  font-size: clamp(26px, 3.5vw, 36px);
+  color: #3D3229;
+  margin: 0 0 20px 0;
+  line-height: 1.2;
+}
+
+.enyf-intro__text {
+  font-family: Raleway, sans-serif;
+  font-size: 17px;
+  color: #5C4F43;
+  max-width: 680px;
+  margin: 0 auto;
+  line-height: 1.8;
+}
+
+/* PROPOSAL TYPES */
+.enyf-proposal-types {
+  background: #faf7f4;
+}
+
+.enyf-proposal-types__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+.enyf-proposal-type {
+  background: #fff;
+  border-radius: 8px;
+  padding: 32px 24px;
+  text-align: center;
+  box-shadow: 0 2px 10px rgba(61,50,41,0.06);
+  transition: box-shadow 0.2s ease;
+}
+
+.enyf-proposal-type:hover {
+  box-shadow: 0 6px 20px rgba(61,50,41,0.12);
+}
+
+.enyf-proposal-type__icon {
+  font-size: 36px;
+  margin-bottom: 14px;
+}
+
+.enyf-proposal-type__title {
+  font-family: Gilda Display, serif;
+  font-size: 22px;
+  color: #3D3229;
+  margin: 0 0 10px 0;
+}
+
+.enyf-proposal-type__text {
+  font-family: Raleway, sans-serif;
+  font-size: 15px;
+  color: #5C4F43;
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* CARD GRID */
+.enyf-catalog {
+  background: #fff;
+}
+
+.enyf-catalog__header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.enyf-catalog__title {
+  font-family: Gilda Display, serif;
+  font-size: clamp(24px, 3vw, 34px);
+  color: #3D3229;
+  margin: 0 0 12px 0;
+}
+
+.enyf-catalog__subtitle {
+  font-family: Raleway, sans-serif;
+  font-size: 16px;
+  color: #5C4F43;
+}
+
+.enyf-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 28px;
+}
+
+.enyf-card {
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid #e8e4dd;
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.enyf-card:hover {
+  box-shadow: 0 8px 28px rgba(61,50,41,0.12);
+  transform: translateY(-2px);
+}
+
+.enyf-card--mockup {
+  opacity: 0.85;
+}
+
+.enyf-card--mockup:hover {
+  transform: none;
+}
+
+.enyf-card__image {
+  height: 180px;
+  background-size: cover;
+  background-position: center;
+  background-color: #e8e4dd;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.enyf-card__badges {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.enyf-card__badge {
+  font-family: Cabin, sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: 20px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.enyf-card__badge--type {
+  background: rgba(61,50,41,0.75);
+  color: #fff;
+  backdrop-filter: blur(4px);
+}
+
+.enyf-card__badge--type--formacion {
+  background: rgba(107,127,89,0.9);
+}
+
+.enyf-card__badge--type--curso {
+  background: rgba(61,50,41,0.75);
+}
+
+.enyf-card__badge--type--taller {
+  background: rgba(139,159,114,0.9);
+}
+
+.enyf-card__badge--status {
+  background: #fff;
+  color: #3D3229;
+  backdrop-filter: blur(4px);
+}
+
+.enyf-card__badge--status--disponible {
+  color: #6B7F59;
+}
+
+.enyf-card__badge--status--nuevo {
+  color: #6B7F59;
+}
+
+.enyf-card__badge--status--popular {
+  color: #B87333;
+}
+
+.enyf-card__badge--status--proximamente {
+  color: #888;
+}
+
+.enyf-card__body {
+  padding: 24px 24px 28px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.enyf-card__title {
+  font-family: Gilda Display, serif;
+  font-size: 20px;
+  color: #3D3229;
+  margin: 0 0 10px 0;
+  line-height: 1.3;
+}
+
+.enyf-card__text {
+  font-family: Raleway, sans-serif;
+  font-size: 14px;
+  color: #5C4F43;
+  line-height: 1.7;
+  margin: 0 0 16px 0;
+  flex: 1;
+}
+
+.enyf-card__meta {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 18px;
+  flex-wrap: wrap;
+}
+
+.enyf-card__meta-item {
+  font-family: Cabin, sans-serif;
+  font-size: 12px;
+  color: #8B9F72;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.enyf-card__cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Cabin, sans-serif;
+  font-weight: 500;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+  padding: 10px 22px;
+  font-size: 14px;
+}
+
+.enyf-card__cta--primary {
+  background: #6B7F59;
+  color: #fff;
+}
+
+.enyf-card__cta--primary:hover {
+  background: #8B9F72;
+  color: #fff;
+  text-decoration: none;
+}
+
+.enyf-card__cta--disabled {
+  background: transparent;
+  color: #aaa;
+  border: 1px solid #ccc;
+  cursor: default;
+}
+
+/* FEATURED FORMATION */
+.enyf-featured {
+  background: linear-gradient(135deg, #3D3229 0%, #4a3f35 100%);
+  color: #fff;
+}
+
+.enyf-featured__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .enyf-featured__grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+.enyf-featured__content {
+  position: relative;
+}
+
+.enyf-featured__eyebrow {
+  font-family: Cabin, sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #8B9F72;
+  margin-bottom: 12px;
+}
+
+.enyf-featured__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(107,127,89,0.3);
+  border: 1px solid rgba(107,127,89,0.5);
+  color: #8B9F72;
+  font-family: Cabin, sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  padding: 4px 14px;
+  border-radius: 20px;
+  margin-bottom: 20px;
+}
+
+.enyf-featured__title {
+  font-family: Gilda Display, serif;
+  font-size: clamp(28px, 4vw, 40px);
+  color: #fff;
+  margin: 0 0 20px 0;
+  line-height: 1.15;
+}
+
+.enyf-featured__text {
+  font-family: Raleway, sans-serif;
+  font-size: 16px;
+  color: rgba(255,255,255,0.8);
+  line-height: 1.8;
+  margin: 0 0 28px 0;
+}
+
+.enyf-featured__details {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 32px;
+  flex-wrap: wrap;
+}
+
+.enyf-featured__detail {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: Cabin, sans-serif;
+  font-size: 14px;
+  color: rgba(255,255,255,0.7);
+}
+
+.enyf-featured__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: #6B7F59;
+  color: #fff;
+  padding: 14px 32px;
+  font-family: Cabin, sans-serif;
+  font-weight: 500;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background 0.2s ease;
+  font-size: 15px;
+}
+
+.enyf-featured__cta:hover {
+  background: #8B9F72;
+  color: #fff;
+  text-decoration: none;
+}
+
+.enyf-featured__video {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  background: rgba(0,0,0,0.3);
+  aspect-ratio: 16/9;
+}
+
+.enyf-featured__video video,
+.enyf-featured__video img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.enyf-featured__video-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.enyf-featured__play-btn {
+  width: 72px;
+  height: 72px;
+  background: rgba(255,255,255,0.15);
+  border: 2px solid rgba(255,255,255,0.6);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(8px);
+  transition: all 0.2s ease;
+}
+
+.enyf-featured__play-btn:hover {
+  background: rgba(255,255,255,0.25);
+  transform: scale(1.05);
+}
+
+.enyf-featured__play-btn::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-left: 16px solid #fff;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  margin-left: 4px;
+}
+
+/* METHODOLOGY */
+.enyf-methodology {
+  background: #fff;
+}
+
+.enyf-methodology__header {
+  text-align: center;
+  margin-bottom: 56px;
+}
+
+.enyf-methodology__title {
+  font-family: Gilda Display, serif;
+  font-size: clamp(26px, 3.5vw, 36px);
+  color: #3D3229;
+  margin: 0 0 12px 0;
+}
+
+.enyf-steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 32px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.enyf-step {
+  text-align: center;
+  padding: 28px 20px;
+}
+
+.enyf-step__number {
+  font-family: Gilda Display, serif;
+  font-size: 48px;
+  color: #e8e4dd;
+  margin-bottom: 12px;
+}
+
+.enyf-step__title {
+  font-family: Gilda Display, serif;
+  font-size: 20px;
+  color: #3D3229;
+  margin: 0 0 8px 0;
+}
+
+.enyf-step__text {
+  font-family: Raleway, sans-serif;
+  font-size: 15px;
+  color: #5C4F43;
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* FINAL CTA */
+.enyf-cta {
+  background: #6B7F59;
+  text-align: center;
+}
+
+.enyf-cta__title {
+  font-family: Gilda Display, serif;
+  font-size: clamp(28px, 4vw, 40px);
+  color: #fff;
+  margin: 0 0 16px 0;
+}
+
+.enyf-cta__text {
+  font-family: Raleway, sans-serif;
+  font-size: 18px;
+  color: rgba(255,255,255,0.85);
+  max-width: 560px;
+  margin: 0 auto 40px;
+  line-height: 1.7;
+}
+
+.enyf-cta__buttons {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .enyf-section {
+    padding: 60px 0;
+  }
+  .enyf-proposal-types__grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .enyf-cards-grid {
+    grid-template-columns: 1fr;
+  }
+  .enyf-hero__ctas,
+  .enyf-cta__buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  .enyf-cta__btn {
+    width: 100%;
+    max-width: 280px;
+  }
+}
+
+@media (max-width: 480px) {
+  .enyf-proposal-types__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* BACKLINK — LearnDash course → /courses/ */
+.enyf-back-to-courses {
+  padding: 20px 24px 0;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.enyf-back-link {
+  font-family: Cabin, sans-serif;
+  font-size: 14px;
+  color: #6B7F59;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: color 0.2s ease;
+}
+.enyf-back-link:hover {
+  color: #3D3229;
+  text-decoration: underline;
+}

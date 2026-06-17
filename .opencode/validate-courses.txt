@@ -1,0 +1,21 @@
+uid=69_0 RootWebArea "Cursos – Escuela Neuquina de Yoga" url="http://escuelaneuquinadeyoga.local/courses/"
+  uid=69_1 link "Saltar al contenido" url="http://escuelaneuquinadeyoga.local/courses/#main"
+    uid=69_2 StaticText "Saltar al contenido"
+  uid=69_3 banner
+    uid=69_4 link "Escuela Neuquina de Yoga" url="http://escuelaneuquinadeyoga.local/"
+      uid=69_5 image "Escuela Neuquina de Yoga" url="http://escuelaneuquinadeyoga.local/wp-content/uploads/2026/05/cropped-cropped-logo.png"
+    uid=69_6 button "Abrir menú" expandable
+  uid=69_7 main
+    uid=69_8 heading "Cursos" level="1"
+    uid=69_9 link "LearnDash 101" url="http://escuelaneuquinadeyoga.local/courses/learndash-101/"
+      uid=69_10 StaticText "LearnDash 101"
+    uid=69_11 link "LEER MÁS LEARNDASH 101" url="http://escuelaneuquinadeyoga.local/courses/learndash-101/"
+      uid=69_12 StaticText "LEER MÁS"
+      uid=69_13 StaticText "LEARNDASH 101"
+  uid=69_14 contentinfo
+    uid=69_15 StaticText "Un espacio de estudio, práctica y profundización, donde el aprendizaje se construye desde la experiencia."
+    uid=69_16 StaticText "Escuela Neuquina de Yoga — Formación integral en yoga"
+    uid=69_17 link "Instagram" url="http://escuelaneuquinadeyoga.local/courses/"
+      uid=69_18 image "Instagram"
+    uid=69_19 link "WhatsApp" url="http://escuelaneuquinadeyoga.local/courses/"
+      uid=69_20 image "WhatsApp"

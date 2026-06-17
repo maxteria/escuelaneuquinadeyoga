@@ -1,0 +1,101 @@
+uid=77_0 RootWebArea "Personalizar: Escuela Neuquina de Yoga – Plataforma de formación en yoga" url="http://escuelaneuquinadeyoga.local/wp-admin/customize.php?autofocus%5Bsection%5D=header_button"
+  uid=77_1 button "Publicada" disableable disabled
+  uid=77_2 link "Cerrar" url="http://escuelaneuquinadeyoga.local/"
+    uid=77_3 StaticText "Cerrar"
+  uid=77_4 button
+  uid=77_5 generic
+    uid=77_6 heading "Estás personalizando Escuela Neuquina de Yoga" level="2"
+    uid=77_7 button " Ayuda" expandable
+    uid=77_8 StaticText "Tema activo"
+    uid=77_9 StaticText "Kadence"
+    uid=77_10 button "Cambiar el tema"
+    uid=77_11 link "Más opciones disponibles en Kadence Pro " url="https://www.kadencewp.com/kadence-theme/premium/?utm_source=in-app&#038;utm_medium=theme-customizer"
+      uid=77_12 StaticText "Más opciones disponibles en Kadence Pro"
+      uid=77_13 StaticText ""
+    uid=77_14 button "Colores y fuentes" expandable
+    uid=77_15 button "Cabecera" expandable
+    uid=77_16 button "Volver"
+    uid=77_17 heading "Personalizando ▸ Cabecera Maquetador de la cabecera" level="3"
+    uid=77_18 link " ESCRITORIO" url="http://escuelaneuquinadeyoga.local/wp-admin/customize.php?autofocus%5Bsection%5D=header_button#"
+      uid=77_13 StaticText ""
+      uid=77_19 StaticText "ESCRITORIO"
+    uid=77_20 link " TABLETA Y MÓVILES" url="http://escuelaneuquinadeyoga.local/wp-admin/customize.php?autofocus%5Bsection%5D=header_button#"
+      uid=77_13 StaticText ""
+      uid=77_21 StaticText "TABLETA Y MÓVILES"
+    uid=77_13 StaticText ""
+    uid=77_22 StaticText "Ocultar"
+    uid=77_23 button "Pie de página" expandable
+    uid=77_24 button "Volver"
+    uid=77_25 heading "Personalizando ▸ Pie de página Maquetador del pie de página" level="3"
+    uid=77_13 StaticText ""
+    uid=77_26 StaticText "Ocultar"
+    uid=77_27 button "General" expandable
+    uid=77_28 button "Diseño de entradas/páginas" expandable
+    uid=77_29 button "Resultados de la búsqueda" expandable
+    uid=77_30 button "LearnDash" expandable
+    uid=77_31 button "Identidad del sitio" expandable
+    uid=77_32 button "Menús" expandable
+    uid=77_33 button "Widgets" expandable
+    uid=77_34 button "Ajustes de la página de inicio" expandable
+    uid=77_35 button "LearnDash Styles" expandable
+    uid=77_36 button "CSS adicional" expandable
+  uid=77_37 button "Ocultar los controles" expandable expanded
+  uid=77_38 button "Entrar en la vista previa de escritorio" pressed
+  uid=77_39 button "Entrar en el modo de vista previa en tableta"
+  uid=77_40 button "Entrar en la vista previa móvil"
+  uid=77_41 Iframe "Vista previa del sitio"
+    uid=77_42 RootWebArea "Escuela Neuquina de Yoga – Plataforma de formación en yoga" url="http://escuelaneuquinadeyoga.local/?customize_changeset_uuid=ce442fbd-28f7-4c77-bc9c-d3d0fb55b4e1&customize_theme=kadence&customize_messenger_channel=preview-0"
+      uid=77_43 link "Saltar al contenido" url="http://escuelaneuquinadeyoga.local/?customize_changeset_uuid=ce442fbd-28f7-4c77-bc9c-d3d0fb55b4e1&customize_theme=kadence&customize_messenger_channel=preview-0#main"
+        uid=77_44 StaticText "Saltar al contenido"
+      uid=77_45 banner "Mayúsculas + clic para editar este elemento."
+        uid=77_46 button "Haz clic para editar este elemento." description="Haz clic para editar este elemento."
+        uid=77_47 button "Haz clic para editar este elemento." description="Haz clic para editar este elemento."
+        uid=77_48 button "Haz clic para editar este elemento." description="Haz clic para editar este elemento."
+        uid=77_49 button "Haz clic para editar este elemento." description="Haz clic para editar este elemento."
+        uid=77_50 button "Haz clic para editar este elemento." description="Haz clic para editar este elemento."
+        uid=77_51 link "Escuela Neuquina de Yoga Escuela Neuquina de Yoga" url="http://escuelaneuquinadeyoga.local/?customize_changeset_uuid=ce442fbd-28f7-4c77-bc9c-d3d0fb55b4e1&customize_messenger_channel=preview-0"
+          uid=77_52 image "Escuela Neuquina de Yoga" url="http://escuelaneuquinadeyoga.local/wp-content/uploads/2026/05/cropped-cropped-logo.png"
+          uid=77_53 StaticText "Escuela Neuquina de Yoga"
+        uid=77_54 navigation "Principal"
+          uid=77_55 button "Haz clic para editar este elemento." description="Haz clic para editar este elemento."
+          uid=77_56 link "Inicio" url="http://escuelaneuquinadeyoga.local/?customize_changeset_uuid=ce442fbd-28f7-4c77-bc9c-d3d0fb55b4e1&customize_messenger_channel=preview-0"
+            uid=77_57 StaticText "Inicio"
+          uid=77_58 link "Formaciones" url="http://escuelaneuquinadeyoga.local/courses/?customize_changeset_uuid=ce442fbd-28f7-4c77-bc9c-d3d0fb55b4e1&customize_messenger_channel=preview-0"
+            uid=77_59 StaticText "Formaciones"
+          uid=77_60 link "Tradición" url="http://escuelaneuquinadeyoga.local/tradicion/?customize_changeset_uuid=ce442fbd-28f7-4c77-bc9c-d3d0fb55b4e1&customize_messenger_channel=preview-0"
+            uid=77_61 StaticText "Tradición"
+          uid=77_62 button "Menú hijo de Tradición" expandable haspopup="menu"
+        uid=77_63 button "Haz clic para editar este elemento." description="Haz clic para editar este elemento."
+        uid=77_64 button "Haz clic para editar este elemento." description="Haz clic para editar este elemento."
+        uid=77_65 button "Haz clic para editar este elemento." description="Haz clic para editar este elemento."
+        uid=77_66 link "Login" url="http://escuelaneuquinadeyoga.local/?customize_changeset_uuid=ce442fbd-28f7-4c77-bc9c-d3d0fb55b4e1&customize_theme=kadence&customize_messenger_channel=preview-0"
+          uid=77_67 StaticText "Login"
+      uid=77_68 main
+        uid=77_69 heading "Inicio" level="1"
+      uid=77_70 contentinfo "Mayúsculas + clic para editar este elemento."
+        uid=77_71 button "Haz clic para editar este elemento." description="Haz clic para editar este elemento."
+        uid=77_72 button "Haz clic para editar este elemento." description="Haz clic para editar este elemento."
+        uid=77_73 button "Haz clic para editar este elemento." description="Haz clic para editar este elemento."
+        uid=77_74 button "Haz clic para editar este elemento." description="Haz clic para editar este elemento."
+        uid=77_75 button "Haz clic para editar este elemento." description="Haz clic para editar este elemento."
+        uid=77_76 region "Mayúsculas + clic para editar este widget."
+          uid=77_77 button "Haz clic para editar este widget." description="Haz clic para editar este widget."
+        uid=77_78 region "Mayúsculas + clic para editar este widget."
+          uid=77_79 button "Haz clic para editar este widget." description="Haz clic para editar este widget."
+          uid=77_80 StaticText "Un espacio de estudio, práctica y profundización, donde el aprendizaje se construye desde la experiencia."
+        uid=77_81 button "Haz clic para editar este elemento." description="Haz clic para editar este elemento."
+        uid=77_82 button "Haz clic para editar este elemento." description="Haz clic para editar este elemento."
+        uid=77_83 button "Haz clic para editar este elemento." description="Haz clic para editar este elemento."
+        uid=77_84 StaticText "Escuela Neuquina de Yoga — Formación integral en yoga"
+        uid=77_85 button "Haz clic para editar este elemento." description="Haz clic para editar este elemento."
+        uid=77_86 button "Haz clic para editar este elemento." description="Haz clic para editar este elemento."
+        uid=77_87 button "Haz clic para editar este elemento." description="Haz clic para editar este elemento."
+        uid=77_88 button "Haz clic para editar este elemento." description="Haz clic para editar este elemento."
+        uid=77_89 link "Instagram" url="http://escuelaneuquinadeyoga.local/?customize_changeset_uuid=ce442fbd-28f7-4c77-bc9c-d3d0fb55b4e1&customize_theme=kadence&customize_messenger_channel=preview-0"
+          uid=77_90 image "Instagram"
+        uid=77_91 link "WhatsApp" url="http://escuelaneuquinadeyoga.local/?customize_changeset_uuid=ce442fbd-28f7-4c77-bc9c-d3d0fb55b4e1&customize_theme=kadence&customize_messenger_channel=preview-0"
+          uid=77_92 image "WhatsApp"
+      uid=77_93 generic atomic live="assertive" relevant="additions text"
+      uid=77_94 generic atomic live="polite" relevant="additions text"
+  uid=77_95 generic atomic live="assertive" relevant="additions text"
+  uid=77_96 generic atomic live="polite" relevant="additions text"

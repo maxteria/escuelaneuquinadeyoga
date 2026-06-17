@@ -1,0 +1,44 @@
+schema: spec-driven
+
+context: |
+  Tech stack: WordPress 7.0 (core) on Local; Kadence parent theme; LearnDash LMS plus custom escuela-lms plugins and mu-plugins.
+  Architecture: Custom plugins hook into LearnDash shortcodes, WP cron, and Kadence filters; theme overrides stay within the Kadence parent.
+  Testing: No automated PHP, JS, or E2E suites committed; verification is manual via WP Admin and LearnDash Focus Mode.
+  Style: Follow existing WordPress coding standards inside custom plugins; no formatter or lint configuration is tracked.
+
+rules:
+  proposal:
+    - Highlight LearnDash data impacts and include rollback considerations.
+  specs:
+    - Capture acceptance criteria with Given/When/Then phrasing.
+  design:
+    - Document affected WordPress hooks, shortcodes, or REST endpoints.
+  tasks:
+    - Group tasks by plugin/theme touched and keep each completable within one session.
+  apply:
+    rules:
+      - Follow existing code patterns in escuela-lms plugins and Kadence overrides.
+    strict_tdd: false
+    test_command: ""
+  verify:
+    test_command: ""
+    build_command: ""
+    coverage_threshold: 0
+  archive:
+    - Capture before/after screenshots for LMS-facing changes when behavior shifts.
+
+testing:
+  strict_tdd: false
+  test_runner: null
+  test_command: ""
+  layers:
+    unit: false
+    integration: false
+    e2e: false
+  coverage:
+    enabled: false
+    command: ""
+  quality:
+    linter: null
+    type_checker: null
+    formatter: null

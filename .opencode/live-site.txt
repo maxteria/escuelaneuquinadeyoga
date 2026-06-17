@@ -1,0 +1,40 @@
+uid=66_0 RootWebArea "Escuela Neuquina de Yoga – Plataforma de formación en yoga" url="http://escuelaneuquinadeyoga.local/"
+  uid=66_1 navigation "Barra de herramientas"
+    uid=66_2 menu orientation="vertical"
+      uid=66_3 menuitem "Acerca de WordPress" expandable
+      uid=66_4 menuitem "Escuela Neuquina de Yoga" expandable
+      uid=66_5 menuitem "Personalizar"
+      uid=66_6 menuitem "1 actualización disponible"
+      uid=66_7 menuitem "0 comentarios en moderación"
+      uid=66_8 menuitem "Añadir" expandable
+      uid=66_9 menuitem "Editar la página"
+    uid=66_10 menu orientation="vertical"
+      uid=66_11 menuitem "Hola, maxteria" expandable
+      uid=66_12 menuitem "Buscar"
+        uid=66_13 textbox "Buscar"
+  uid=66_14 link "Saltar al contenido" url="http://escuelaneuquinadeyoga.local/#main"
+    uid=66_15 StaticText "Saltar al contenido"
+  uid=66_16 banner
+    uid=66_17 link "Escuela Neuquina de Yoga" url="http://escuelaneuquinadeyoga.local/"
+      uid=66_18 image "Escuela Neuquina de Yoga" url="http://escuelaneuquinadeyoga.local/wp-content/uploads/2022/01/logo-hd.png"
+    uid=66_19 navigation "Principal"
+      uid=66_20 link "Inicio" url="http://escuelaneuquinadeyoga.local/"
+        uid=66_21 StaticText "Inicio"
+      uid=66_22 link "Formaciones" url="http://escuelaneuquinadeyoga.local/courses/"
+        uid=66_23 StaticText "Formaciones"
+      uid=66_24 link "Tradición" url="http://escuelaneuquinadeyoga.local/tradicion/"
+        uid=66_25 StaticText "Tradición"
+      uid=66_26 button "Menú hijo de Tradición" expandable haspopup="menu"
+    uid=66_27 link "Login" url="http://escuelaneuquinadeyoga.local/"
+      uid=66_28 StaticText "Login"
+  uid=66_29 main
+    uid=66_30 heading "Inicio" level="1"
+  uid=66_31 contentinfo
+    uid=66_32 StaticText "Tincidunt vitae semper quis lectus nulla. Adipiscing bibendum est ultricies integer quis auctor elit sed vulputate. "
+    uid=66_33 StaticText "Escuela Neuquina de Yoga — Formación integral en yoga"
+    uid=66_34 link "Facebook" url="http://escuelaneuquinadeyoga.local/"
+      uid=66_35 image "Facebook"
+    uid=66_36 link "X" url="http://escuelaneuquinadeyoga.local/"
+      uid=66_37 image "X"
+    uid=66_38 link "Instagram" url="http://escuelaneuquinadeyoga.local/"
+      uid=66_39 image "Instagram"

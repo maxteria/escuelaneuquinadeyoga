@@ -1,0 +1,46 @@
+/* =============================================
+   PUBLIC LANDING PAGES — REUSABLE PATTERNS
+   Apply to any page that uses [inicio_landing] or [formaciones_landing]
+   ============================================= */
+
+/* ---- FULLBLEED WRAPPER ----
+   Breaks out of any parent container to span full viewport width.
+   Use on the outermost wrapper of a hero element.
+   ---- */
+.enya-fullbleed-wrapper,
+.enyf-fullbleed-wrapper {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  position: relative;
+}
+
+/* ---- CONTENT AREA: no top margin when page uses fullbleed section ----
+   Kadence sets margin-top on .content-area via customizer.
+   Pages with their own section shortcode need this suppressed.
+   ---- */
+html body.page-id-1483 .content-area,
+html body.page-id-1493 .content-area,
+html body.enyf-courses .content-area {
+  margin-top: 0 !important;
+}
+
+/* ---- ENTRY CONTENT WRAP: no top padding when page uses fullbleed section ----
+   Kadence sets 32px padding-top on .entry-content-wrap by default.
+   Pages with their own section shortcode need this suppressed.
+   ---- */
+body.page-id-1483 .entry-content-wrap,
+body.page-id-1493 .entry-content-wrap,
+body.enyf-courses .entry-content-wrap {
+  padding-top: 0 !important;
+}
+
+/* ---- ENTRY CONTENT: no top padding when page uses fullbleed section ----
+   Kadence sets padding-top on .entry-content by default.
+   Pages with their own section shortcode need this suppressed.
+   ---- */
+body.page-id-1483 .entry-content,
+body.page-id-1493 .entry-content,
+body.enyf-courses .entry-content {
+  padding-top: 0 !important;
+}
