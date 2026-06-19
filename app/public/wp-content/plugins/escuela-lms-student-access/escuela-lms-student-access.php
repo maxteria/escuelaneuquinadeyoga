@@ -30,10 +30,18 @@ if ( $redirect_handler_enabled ) {
 // CTA module is always active (shows "Volver al aula" to students).
 require_once __DIR__ . '/includes/cta.php';
 
+// User header component (stateful Aula header control).
+require_once __DIR__ . '/includes/user-header-component.php';
+
 /**
  * Enqueue CTA styles on frontend.
  */
 add_action( 'wp_enqueue_scripts', 'escuela_lms_enqueue_cta_styles' );
+
+/**
+ * Enqueue user header component assets on frontend.
+ */
+add_action( 'wp_enqueue_scripts', 'escuela_lms_enqueue_user_header_assets' );
 
 function escuela_lms_enqueue_cta_styles() {
 	if ( ! is_user_logged_in() ) {
@@ -51,6 +59,29 @@ function escuela_lms_enqueue_cta_styles() {
 		plugin_dir_url( __FILE__ ) . 'assets/css/cta.css',
 		array(),
 		'1.0.0'
+	);
+}
+
+function escuela_lms_enqueue_user_header_assets() {
+	$css_path = plugin_dir_path( __FILE__ ) . 'assets/css/user-header-component.css';
+	$js_path  = plugin_dir_path( __FILE__ ) . 'assets/js/user-header-component.js';
+
+	$css_version = file_exists( $css_path ) ? (string) filemtime( $css_path ) : '1.0.0';
+	$js_version  = file_exists( $js_path ) ? (string) filemtime( $js_path ) : '1.0.0';
+
+	wp_enqueue_style(
+		'escuela-lms-user-header',
+		plugin_dir_url( __FILE__ ) . 'assets/css/user-header-component.css',
+		array(),
+		$css_version
+	);
+
+	wp_enqueue_script(
+		'escuela-lms-user-header',
+		plugin_dir_url( __FILE__ ) . 'assets/js/user-header-component.js',
+		array(),
+		$js_version,
+		true
 	);
 }
 
