@@ -94,7 +94,7 @@ function escuela_lms_render_user_dropdown() {
 	$links = array(
 		array(
 			'href'  => home_url( '/profile/' ),
-			'label' => __( 'My profile', 'escuela-lms' ),
+			'label' => __( 'Mi perfil', 'escuela-lms' ),
 			'class' => 'enyf-user-nav__link',
 		),
 		array(
@@ -104,7 +104,7 @@ function escuela_lms_render_user_dropdown() {
 		),
 		array(
 			'href'  => wp_logout_url( home_url( '/aula/' ) ),
-			'label' => __( 'Log out', 'escuela-lms' ),
+			'label' => __( 'Cerrar sesión', 'escuela-lms' ),
 			'class' => 'enyf-user-nav__link enyf-user-nav__link--logout',
 		),
 	);
@@ -122,7 +122,7 @@ function escuela_lms_render_user_dropdown() {
 
 	$trigger_label = sprintf(
 		/* translators: %s: user's first name or display name */
-		__( 'Hi, %s', 'escuela-lms' ),
+		__( 'Hola, %s', 'escuela-lms' ),
 		$greeting_name
 	);
 
@@ -148,7 +148,7 @@ function escuela_lms_render_user_dropdown() {
  * @return string
  */
 function escuela_lms_render_aula_cta() {
-	$label = __( 'Enter Aula', 'escuela-lms' );
+	$label = __( 'Entrar al aula', 'escuela-lms' );
 	$url   = escuela_lms_get_aula_dashboard_url_safe();
 
 	return sprintf(
