@@ -86,6 +86,40 @@ function escuela_lms_enqueue_user_header_assets() {
 }
 
 /**
+ * Enqueue frontend auth form validation.
+ */
+add_action( 'wp_enqueue_scripts', 'escuela_lms_enqueue_auth_validation' );
+
+function escuela_lms_enqueue_auth_validation() {
+	if ( is_admin() ) {
+		return;
+	}
+
+	$js_path = plugin_dir_path( __FILE__ ) . 'assets/js/auth-form-validation.js';
+	if ( ! file_exists( $js_path ) ) {
+		return;
+	}
+
+	wp_enqueue_script(
+		'escuela-lms-auth-validation',
+		plugin_dir_url( __FILE__ ) . 'assets/js/auth-form-validation.js',
+		array(),
+		(string) filemtime( $js_path ),
+		true
+	);
+
+	$css_path = plugin_dir_path( __FILE__ ) . 'assets/css/auth-form-validation.css';
+	if ( file_exists( $css_path ) ) {
+		wp_enqueue_style(
+			'escuela-lms-auth-validation',
+			plugin_dir_url( __FILE__ ) . 'assets/css/auth-form-validation.css',
+			array(),
+			(string) filemtime( $css_path )
+		);
+	}
+}
+
+/**
  * Redirect guests from /profile/ to /aula/
  * Only applies to non-logged-in users
  */
@@ -166,6 +200,39 @@ function escuela_lms_lostpassword_url( $lostpassword_url, $redirect ) {
 
 function escuela_lms_register_url( $register_url ) {
     return home_url( '/registro/' );
+}
+
+/**
+ * Translate LearnDash auth UI strings to Spanish on the frontend.
+ */
+add_filter( 'gettext', 'escuela_lms_translate_learndash_auth_strings', 10, 3 );
+
+function escuela_lms_translate_learndash_auth_strings( $translation, $text, $domain ) {
+    if ( is_admin() || $domain !== 'learndash' ) {
+        return $translation;
+    }
+
+    $strings = array(
+        'Forgot Password'                => '¿Olvidaste tu contraseña?',
+        'Reset Password'                 => 'Restablecer contraseña',
+        'Username or Email Address'      => 'Nombre de usuario o correo electrónico',
+        'Username or Email Address *'    => 'Nombre de usuario o correo electrónico *',
+        'Password'                       => 'Contraseña',
+        'Log In'                         => 'Acceder',
+        'Login'                          => 'Iniciar sesión',
+        'Register'                       => 'Registrarse',
+        'Remember Me'                    => 'Recuérdame',
+        'Lost your password?'            => '¿Olvidaste tu contraseña?',
+        'Create Account'                 => 'Crear cuenta',
+        'Don\'t have an account? Create one!' => '¿No tenés una cuenta? ¡Creá una!',
+        'Register your account'          => 'Registrá tu cuenta',
+    );
+
+    if ( isset( $strings[ $text ] ) ) {
+        return $strings[ $text ];
+    }
+
+    return $translation;
 }
 
 /**

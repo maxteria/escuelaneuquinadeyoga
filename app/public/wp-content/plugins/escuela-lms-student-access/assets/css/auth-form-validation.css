@@ -1,0 +1,15 @@
+.enyf-form-error {
+	margin: 8px 0 0;
+	padding: 10px 14px;
+	border-radius: 8px;
+	background: rgba(199, 80, 64, 0.1);
+	color: #c75040;
+	font-family: "Raleway", sans-serif;
+	font-size: 13px;
+	font-weight: 500;
+	line-height: 1.5;
+}
+
+.enyf-form-error:empty {
+	display: none;
+}
