@@ -10,6 +10,8 @@
 
 .header-navigation li.enyf-user-nav__cta-item > a.enyf-user-nav__cta,
 .enyf-user-nav__cta {
+	/* Match the visual style of the LearnDash login/register button (aula.css):
+	   pill shape, accent green background, white text, soft shadow. */
 	display: inline-flex;
 	align-items: center;
 	gap: 10px;
@@ -17,12 +19,16 @@
 	border-radius: 999px;
 	border: none;
 	background: var(--aula-accent, var(--global-palette-btn-bg, #6b7f59));
+	/* Kadence menu links set color via a more specific selector, so !important
+	   keeps the CTA text/icon white in both resting and hover states. */
 	color: #fff !important;
 	font-family: "Cabin", sans-serif;
 	font-size: 14px;
 	font-weight: 500;
 	letter-spacing: 0.3px;
 	text-decoration: none;
+	/* Kadence primary menu forces text-transform: capitalize; preserve the
+	   intended "Entrar al aula" casing for the CTA label. */
 	text-transform: none !important;
 	box-shadow: 0 4px 16px rgba(61, 50, 41, 0.08);
 	transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
