@@ -226,6 +226,7 @@ function escuela_lms_translate_learndash_auth_strings( $translation, $text, $dom
         'Create Account'                 => 'Crear cuenta',
         'Don\'t have an account? Create one!' => '¿No tenés una cuenta? ¡Creá una!',
         'Register your account'          => 'Registrá tu cuenta',
+        'If an account with that username or email address exists, an email has been sent with password reset instructions.' => 'Si existe una cuenta con ese correo electrónico, recibirás un enlace para restablecer tu contraseña.',
     );
 
     if ( isset( $strings[ $text ] ) ) {

@@ -17,11 +17,9 @@
 		var message = '';
 
 		if (value === '') {
-			message = 'Por favor, ingresá tu nombre de usuario o correo electrónico.';
-		} else if (value.indexOf('@') !== -1 && !isValidEmail(value)) {
+			message = 'Por favor, ingresá tu correo electrónico.';
+		} else if (!isValidEmail(value)) {
 			message = 'Por favor, ingresá un correo electrónico válido.';
-		} else if (value.length < 3) {
-			message = 'Por favor, ingresá al menos 3 caracteres.';
 		}
 
 		if (message !== '') {
@@ -47,7 +45,6 @@
 			var input = form.querySelector('#user_login');
 			if (input) {
 				input.setAttribute('aria-required', 'true');
-				input.setAttribute('minlength', '3');
 			}
 
 			form.addEventListener('submit', function (event) {
