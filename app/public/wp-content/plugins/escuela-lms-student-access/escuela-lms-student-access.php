@@ -149,3 +149,49 @@ function enya_disable_admin_bar_on_login( $user_login, $user ) {
         update_user_meta( $user->ID, 'show_admin_bar_front', 'false' );
     }
 }
+
+/**
+ * Use frontend pages for auth flows instead of wp-login.php and legacy slugs.
+ */
+add_filter( 'lostpassword_url', 'escuela_lms_lostpassword_url', 10, 2 );
+add_filter( 'register_url', 'escuela_lms_register_url' );
+
+function escuela_lms_lostpassword_url( $lostpassword_url, $redirect ) {
+    $url = home_url( '/recuperar-contrasena/' );
+    if ( ! empty( $redirect ) ) {
+        $url = add_query_arg( 'redirect_to', urlencode( $redirect ), $url );
+    }
+    return $url;
+}
+
+function escuela_lms_register_url( $register_url ) {
+    return home_url( '/registro/' );
+}
+
+/**
+ * Redirect legacy auth slugs to the current friendly URLs.
+ */
+add_action( 'template_redirect', 'escuela_lms_redirect_legacy_auth_slugs' );
+
+function escuela_lms_redirect_legacy_auth_slugs() {
+    if ( is_admin() ) {
+        return;
+    }
+
+    $current_path = isset( $_SERVER['REQUEST_URI'] ) ? wp_parse_url( $_SERVER['REQUEST_URI'], PHP_URL_PATH ) : '';
+    if ( empty( $current_path ) ) {
+        return;
+    }
+
+    $legacy_slugs = array(
+        '/registration-2/' => home_url( '/registro/' ),
+        '/registration-2'  => home_url( '/registro/' ),
+        '/reset-password/' => home_url( '/recuperar-contrasena/' ),
+        '/reset-password'  => home_url( '/recuperar-contrasena/' ),
+    );
+
+    if ( isset( $legacy_slugs[ $current_path ] ) ) {
+        wp_redirect( $legacy_slugs[ $current_path ], 301 );
+        exit;
+    }
+}
