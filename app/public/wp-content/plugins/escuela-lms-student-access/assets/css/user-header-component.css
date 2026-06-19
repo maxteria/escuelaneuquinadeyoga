@@ -14,9 +14,9 @@
 	gap: 10px;
 	padding: 8px 18px;
 	border-radius: 8px;
-	border: 1.5px solid var(--global-palette-btn-bg, #6b7f59);
-	background: transparent;
-	color: var(--global-palette-btn-bg, #6b7f59);
+	border: 1.5px solid var(--global-palette-btn-bg-hover, #4f6143);
+	background: var(--global-palette-btn-bg-hover, #4f6143);
+	color: #fff;
 	font-family: "Cabin", sans-serif;
 	font-size: 14px;
 	font-weight: 600;
@@ -36,10 +36,10 @@
 
 .enyf-user-nav__cta:hover,
 .enyf-user-nav__cta:focus {
-	background: var(--global-palette-btn-bg-hover, #4f6143);
-	border-color: var(--global-palette-btn-hover, #4f6143);
+	background: #3d4a33;
+	border-color: #3d4a33;
 	color: #fff;
-	transform: translateY(-1px);
+	transform: scale(0.97);
 }
 
 .enyf-user-nav__cta:hover .enyf-user-nav__cta-icon,
