@@ -8,6 +8,14 @@ if ( ! defined( 'ABSPATH' ) ) {
     exit;
 }
 
+/**
+ * Return the fully-qualified uploads URL for a relative path.
+ * Never hardcode an environment-specific domain.
+ */
+function escuela_upload_url( $path ) {
+    return home_url( '/wp-content/uploads/' . ltrim( $path, '/' ) );
+}
+
 if ( ! class_exists( 'Escuela_Aula_Dashboard_Service' ) ) {
     /**
      * Provides LearnDash-backed data for the Aula dashboard.
@@ -813,11 +821,12 @@ add_shortcode('tradicion_features', function() {
 });
 
 add_shortcode('instructora_bio', function() {
+    $img_url = escuela_upload_url('2026/05/escuela-neuquiena-de-yoga-32.png');
     return '
 <section class="enyi-instructora">
     <div class="enyi-instructora__image-wrap">
         <img class="enyi-instructora__photo"
-             src="http://escuelaneuquinadeyoga.local/wp-content/uploads/2026/05/escuela-neuquiena-de-yoga-32.png"
+             src="' . $img_url . '"
              alt="Andrea — guia y fundadora de la Escuela Neuquina de Yoga">
     </div>
     <div class="enyi-instructora__content">
@@ -867,11 +876,13 @@ add_shortcode('escuela_info', function() {
 });
 
 add_shortcode('la_escuela_landing', function() {
-    return '<section class="enye-hero"><div class="enye-hero__inner"><h1 class="enye-hero__title">La Escuela</h1><p class="enye-hero__subtitle">Un espacio de practica, formacion y encuentro enraizado en el yoga, la meditacion y la transmision viva de la ensenanza.</p></div></section><section class="enye-section enye-section--image"><div class="enye-container enye-grid"><div class="enye-grid__image"><img class="enye-grid__photo" src="http://escuelaneuquinadeyoga.local/wp-content/uploads/2026/05/escuela-neuquiena-de-yoga-10-1024x768.png" alt="La Escuela Neuquina de Yoga — espacio de estudio y practica"></div><div class="enye-grid__content"><div class="enye-grid__eyebrow">La Escuela</div><h2 class="enye-grid__title">Un espacio de estudio, practica y profundidad</h2><p class="enye-grid__text">La Escuela Neuquina de Yoga nace como un espacio para acompanar procesos reales de aprendizaje, practica e integracion. No se trata solo de tomar clases, sino de construir un recorrido con sentido, presencia y continuidad.</p><p class="enye-grid__text">Cada formacion combina contenidos teoricos, practica guiada, materiales de estudio y propuestas de integracion para que el aprendizaje pueda vivirse de manera clara, humana y sostenida.</p></div></div></section><section class="enye-section"><div class="enye-container enye-container--narrow"><div class="enye-grid__eyebrow">Una practica con raiz</div><h2 class="enye-grid__title">Tradicion y ensenanza viva</h2><p class="enye-grid__text">Desde la tradicion del yoga, la escuela propone un camino cercano y profundo: estudiar, practicar, observar y transformar la experiencia cotidiana desde la presencia. No es una moda ni un consumo: es un proceso que se sostiene con dedicacion, guia y comunidad.</p><p class="enye-grid__text">La practica no se limita al mat. Se extiende a la forma de respirar, de habitar el cuerpo, de relacionarse con uno mismo y con los demas. Cada formacion, taller o encuentro esta pensado para acompanar ese proceso con sentido, profundidad y continuidad.</p></div></div></section>';
+    $img_url = escuela_upload_url('2026/05/escuela-neuquiena-de-yoga-10-1024x768.png');
+    return '<section class="enye-hero"><div class="enye-hero__inner"><h1 class="enye-hero__title">La Escuela</h1><p class="enye-hero__subtitle">Un espacio de practica, formacion y encuentro enraizado en el yoga, la meditacion y la transmision viva de la ensenanza.</p></div></section><section class="enye-section enye-section--image"><div class="enye-container enye-grid"><div class="enye-grid__image"><img class="enye-grid__photo" src="' . $img_url . '" alt="La Escuela Neuquina de Yoga — espacio de estudio y practica"></div><div class="enye-grid__content"><div class="enye-grid__eyebrow">La Escuela</div><h2 class="enye-grid__title">Un espacio de estudio, practica y profundidad</h2><p class="enye-grid__text">La Escuela Neuquina de Yoga nace como un espacio para acompanar procesos reales de aprendizaje, practica e integracion. No se trata solo de tomar clases, sino de construir un recorrido con sentido, presencia y continuidad.</p><p class="enye-grid__text">Cada formacion combina contenidos teoricos, practica guiada, materiales de estudio y propuestas de integracion para que el aprendizaje pueda vivirse de manera clara, humana y sostenida.</p></div></div></section><section class="enye-section"><div class="enye-container enye-container--narrow"><div class="enye-grid__eyebrow">Una practica con raiz</div><h2 class="enye-grid__title">Tradicion y ensenanza viva</h2><p class="enye-grid__text">Desde la tradicion del yoga, la escuela propone un camino cercano y profundo: estudiar, practicar, observar y transformar la experiencia cotidiana desde la presencia. No es una moda ni un consumo: es un proceso que se sostiene con dedicacion, guia y comunidad.</p><p class="enye-grid__text">La practica no se limita al mat. Se extiende a la forma de respirar, de habitar el cuerpo, de relacionarse con uno mismo y con los demas. Cada formacion, taller o encuentro esta pensado para acompanar ese proceso con sentido, profundidad y continuidad.</p></div></div></section>';
 });
 
 add_shortcode('tradicion_la_escuela', function() {
-    return '<section class="enyi-instructora enyi-instructora--reverse"><div class="enyi-instructora__image-wrap"><img class="enyi-instructora__photo" src="http://escuelaneuquinadeyoga.local/wp-content/uploads/2026/05/escuela-neuquiena-de-yoga-10-1024x768.png" alt="La Escuela Neuquina de Yoga — espacio de estudio y practica"></div><div class="enyi-instructora__content"><div class="enyi-instructora__eyebrow">La Escuela</div><h1 class="enyi-instructora__title">Un espacio de estudio, practica y profundidad</h1><p class="enyi-instructora__text">La Escuela Neuquina de Yoga nace como un espacio para acompanar procesos reales de aprendizaje, practica e integracion. No se trata solo de tomar clases, sino de construir un recorrido con sentido, presencia y continuidad.</p><p class="enyi-instructora__text">Cada formacion combina contenidos teoricos, practica guiada, materiales de estudio y propuestas de integracion para que el aprendizaje pueda vivirse de manera clara, humana y sostenida.</p><p class="enyi-instructora__text">Desde la tradicion del yoga, la escuela propone un camino cercano y profundo: estudiar, practicar, observar y transformar la experiencia cotidiana desde la presencia.</p><ul class="enyi-instructora__highlights"><li><span class="enyi-instructora__highlight-icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></span> Formacion progresiva y acompanada</li><li><span class="enyi-instructora__highlight-icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 19.5A2.5 2.5 0 016.5 17H20M4 19.5A2.5 2.5 0 014 17V5a2 2 0 012-2h14a2 2 0 012 2v14l-5-2.5L4 19.5z"/></svg></span> Materiales de estudio y recursos descargables</li><li><span class="enyi-instructora__highlight-icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg></span> Acompanamiento personalizado</li></ul><div class="enyi-instructora__ctas"><a href="/courses/" class="enyi-btn enyi-btn--primary">Ver formaciones</a><a href="https://wa.me/5492942337884?text=Hola%2C%20quiero%20consultar" class="enyi-btn enyi-btn--outline-dark" target="_blank" rel="noopener">Consultar por WhatsApp</a></div></div></section>';
+    $img_url = escuela_upload_url('2026/05/escuela-neuquiena-de-yoga-10-1024x768.png');
+    return '<section class="enyi-instructora enyi-instructora--reverse"><div class="enyi-instructora__image-wrap"><img class="enyi-instructora__photo" src="' . $img_url . '" alt="La Escuela Neuquina de Yoga — espacio de estudio y practica"></div><div class="enyi-instructora__content"><div class="enyi-instructora__eyebrow">La Escuela</div><h1 class="enyi-instructora__title">Un espacio de estudio, practica y profundidad</h1><p class="enyi-instructora__text">La Escuela Neuquina de Yoga nace como un espacio para acompanar procesos reales de aprendizaje, practica e integracion. No se trata solo de tomar clases, sino de construir un recorrido con sentido, presencia y continuidad.</p><p class="enyi-instructora__text">Cada formacion combina contenidos teoricos, practica guiada, materiales de estudio y propuestas de integracion para que el aprendizaje pueda vivirse de manera clara, humana y sostenida.</p><p class="enyi-instructora__text">Desde la tradicion del yoga, la escuela propone un camino cercano y profundo: estudiar, practicar, observar y transformar la experiencia cotidiana desde la presencia.</p><ul class="enyi-instructora__highlights"><li><span class="enyi-instructora__highlight-icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></span> Formacion progresiva y acompanada</li><li><span class="enyi-instructora__highlight-icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 19.5A2.5 2.5 0 016.5 17H20M4 19.5A2.5 2.5 0 014 17V5a2 2 0 012-2h14a2 2 0 012 2v14l-5-2.5L4 19.5z"/></svg></span> Materiales de estudio y recursos descargables</li><li><span class="enyi-instructora__highlight-icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg></span> Acompanamiento personalizado</li></ul><div class="enyi-instructora__ctas"><a href="/courses/" class="enyi-btn enyi-btn--primary">Ver formaciones</a><a href="https://wa.me/5492942337884?text=Hola%2C%20quiero%20consultar" class="enyi-btn enyi-btn--outline-dark" target="_blank" rel="noopener">Consultar por WhatsApp</a></div></div></section>';
 });
 
 add_shortcode('formaciones_landing', function() {
@@ -913,7 +924,7 @@ add_shortcode('formaciones_landing', function() {
         </div>
         <div class="enyf-cards-grid">
             <div class="enyf-card">
-                <div class="enyf-card__image" style="background-image:url(http://escuelaneuquinadeyoga.local/wp-content/uploads/2026/05/formacion-en-meditacion-01-768x432.png);">
+                <div class="enyf-card__image" style="background-image:url(' . escuela_upload_url('/2026/05/formacion-en-meditacion-01-768x432.png') . ');">
                     <div class="enyf-card__badges">
                         <span class="enyf-card__badge enyf-card__badge--type enyf-card__badge--type--formacion">Formacion</span>
                         <span class="enyf-card__badge enyf-card__badge--status enyf-card__badge--status--disponible">Disponible</span>
@@ -932,7 +943,7 @@ add_shortcode('formaciones_landing', function() {
             </div>
 
             <div class="enyf-card enyf-card--mockup">
-                <div class="enyf-card__image" style="background-image:url(http://escuelaneuquinadeyoga.local/wp-content/uploads/2026/05/ChatGPT-Image-15-may-2026-04_40_35-1.png);">
+                <div class="enyf-card__image" style="background-image:url(' . escuela_upload_url('/2026/05/ChatGPT-Image-15-may-2026-04_40_35-1.png') . ');">
                     <div class="enyf-card__badges">
                         <span class="enyf-card__badge enyf-card__badge--type enyf-card__badge--type--formacion">Formacion</span>
                         <span class="enyf-card__badge enyf-card__badge--status enyf-card__badge--status--proximamente">Proximamente</span>
@@ -951,7 +962,7 @@ add_shortcode('formaciones_landing', function() {
             </div>
 
             <div class="enyf-card enyf-card--mockup">
-                <div class="enyf-card__image" style="background-image:url(http://escuelaneuquinadeyoga.local/wp-content/uploads/2026/05/ChatGPT-Image-15-may-2026-04_40_37-4.png);">
+                <div class="enyf-card__image" style="background-image:url(' . escuela_upload_url('/2026/05/ChatGPT-Image-15-may-2026-04_40_37-4.png') . ');">
                     <div class="enyf-card__badges">
                         <span class="enyf-card__badge enyf-card__badge--type enyf-card__badge--type--formacion">Formacion</span>
                         <span class="enyf-card__badge enyf-card__badge--status enyf-card__badge--status--proximamente">Proximamente</span>
@@ -970,7 +981,7 @@ add_shortcode('formaciones_landing', function() {
             </div>
 
             <div class="enyf-card enyf-card--mockup">
-                <div class="enyf-card__image" style="background-image:url(http://escuelaneuquinadeyoga.local/wp-content/uploads/2026/05/ChatGPT-Image-15-may-2026-04_40_37-6.png);">
+                <div class="enyf-card__image" style="background-image:url(' . escuela_upload_url('/2026/05/ChatGPT-Image-15-may-2026-04_40_37-6.png') . ');">
                     <div class="enyf-card__badges">
                         <span class="enyf-card__badge enyf-card__badge--type enyf-card__badge--type--curso">Curso</span>
                         <span class="enyf-card__badge enyf-card__badge--status enyf-card__badge--status--popular">Popular</span>
@@ -989,7 +1000,7 @@ add_shortcode('formaciones_landing', function() {
             </div>
 
             <div class="enyf-card enyf-card--mockup">
-                <div class="enyf-card__image" style="background-image:url(http://escuelaneuquinadeyoga.local/wp-content/uploads/2026/05/ChatGPT-Image-15-may-2026-04_40_37-7.png);">
+                <div class="enyf-card__image" style="background-image:url(' . escuela_upload_url('/2026/05/ChatGPT-Image-15-may-2026-04_40_37-7.png') . ');">
                     <div class="enyf-card__badges">
                         <span class="enyf-card__badge enyf-card__badge--type enyf-card__badge--type--taller">Taller</span>
                         <span class="enyf-card__badge enyf-card__badge--status enyf-card__badge--status--nuevo">Nuevo</span>
@@ -1008,7 +1019,7 @@ add_shortcode('formaciones_landing', function() {
             </div>
 
             <div class="enyf-card enyf-card--mockup">
-                <div class="enyf-card__image" style="background-image:url(http://escuelaneuquinadeyoga.local/wp-content/uploads/2026/05/ChatGPT-Image-15-may-2026-04_40_37-8.png);">
+                <div class="enyf-card__image" style="background-image:url(' . escuela_upload_url('/2026/05/ChatGPT-Image-15-may-2026-04_40_37-8.png') . ');">
                     <div class="enyf-card__badges">
                         <span class="enyf-card__badge enyf-card__badge--type enyf-card__badge--type--curso">Curso</span>
                     </div>
@@ -1026,7 +1037,7 @@ add_shortcode('formaciones_landing', function() {
             </div>
 
             <div class="enyf-card enyf-card--mockup">
-                <div class="enyf-card__image" style="background-image:url(http://escuelaneuquinadeyoga.local/wp-content/uploads/2026/05/ChatGPT-Image-15-may-2026-04_40_37-9.png);">
+                <div class="enyf-card__image" style="background-image:url(' . escuela_upload_url('/2026/05/ChatGPT-Image-15-may-2026-04_40_37-9.png') . ');">
                     <div class="enyf-card__badges">
                         <span class="enyf-card__badge enyf-card__badge--type enyf-card__badge--type--taller">Taller</span>
                     </div>
@@ -1044,7 +1055,7 @@ add_shortcode('formaciones_landing', function() {
             </div>
 
             <div class="enyf-card enyf-card--mockup">
-                <div class="enyf-card__image" style="background-image:url(http://escuelaneuquinadeyoga.local/wp-content/uploads/2026/05/ChatGPT-Image-15-may-2026-04_40_37-10.png);">
+                <div class="enyf-card__image" style="background-image:url(' . escuela_upload_url('/2026/05/ChatGPT-Image-15-may-2026-04_40_37-10.png') . ');">
                     <div class="enyf-card__badges">
                         <span class="enyf-card__badge enyf-card__badge--type enyf-card__badge--type--curso">Curso</span>
                         <span class="enyf-card__badge enyf-card__badge--status enyf-card__badge--status--proximamente">Proximamente</span>
@@ -1087,7 +1098,7 @@ add_shortcode('formaciones_landing', function() {
                 </a>
             </div>
             <div class="enyf-featured__video">
-                <img src="http://escuelaneuquinadeyoga.local/wp-content/uploads/2026/05/formacion-en-meditacion-01-1024x576.png" alt="Formacion en Meditacion">
+                <img src="' . escuela_upload_url('/2026/05/formacion-en-meditacion-01-1024x576.png') . '" alt="Formacion en Meditacion">
                 <div class="enyf-featured__video-overlay">
                     <a href="/courses/formacion-en-meditacion/" class="enyf-featured__play-btn" aria-label="Ver formacion"></a>
                 </div>
