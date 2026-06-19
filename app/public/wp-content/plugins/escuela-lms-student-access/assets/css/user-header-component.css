@@ -11,7 +11,7 @@
 .enyf-user-nav__cta {
 	display: inline-flex;
 	align-items: center;
-	gap: 8px;
+	gap: 10px;
 	padding: 8px 18px;
 	border-radius: 8px;
 	border: 1.5px solid var(--global-palette-btn-bg, #6b7f59);
@@ -27,14 +27,26 @@
 
 .enyf-user-nav__cta-icon {
 	flex: 0 0 auto;
+	color: inherit;
+}
+
+.enyf-user-nav__cta span {
+	color: inherit;
 }
 
 .enyf-user-nav__cta:hover,
 .enyf-user-nav__cta:focus {
-	background: var(--global-palette-btn-bg, #6b7f59);
-	border-color: var(--global-palette-btn-bg, #6b7f59);
+	background: var(--global-palette-btn-bg-hover, #4f6143);
+	border-color: var(--global-palette-btn-hover, #4f6143);
 	color: #fff;
 	transform: translateY(-1px);
+}
+
+.enyf-user-nav__cta:hover .enyf-user-nav__cta-icon,
+.enyf-user-nav__cta:focus .enyf-user-nav__cta-icon,
+.enyf-user-nav__cta:hover span,
+.enyf-user-nav__cta:focus span {
+	color: #fff;
 }
 
 .enyf-user-nav__cta:focus-visible {
