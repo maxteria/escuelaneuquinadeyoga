@@ -622,7 +622,7 @@ function escuela_lms_render_aula_guest_view() {
         $img_url = plugin_dir_url( __FILE__ ) . 'assets/images/aula-default.jpg';
     }
 
-    $login_form = do_shortcode( '[learndash_login login_model="yes" login_label="Iniciar sesión o registrarse"]' );
+    $login_form = do_shortcode( '[learndash_login login_label="Iniciar sesión o registrarse"]' );
 
     ob_start();
     ?>
@@ -632,7 +632,7 @@ function escuela_lms_render_aula_guest_view() {
                 <span class="enya-aula-hero__eyebrow">AULA VIRTUAL</span>
                 <h1 class="enya-aula-hero__title">Entrá a tu espacio de aprendizaje</h1>
                 <p class="enya-aula-hero__text">Accedé a tus cursos, materiales, videos y recorridos de práctica desde un solo lugar.</p>
-                <div class="enya-aula-hero__cta"><?php echo $login_form; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></div>
+                <div class="enya-aula-hero__cta" data-aula-login><?php echo $login_form; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></div>
                 <p class="enya-aula-hero__footnote">Si ya tenés cuenta, ingresá con tus datos. Si es tu primera vez, podés crearla desde el mismo acceso.</p>
             </div>
             <div class="enya-aula-hero__visual" aria-hidden="true">
@@ -642,6 +642,45 @@ function escuela_lms_render_aula_guest_view() {
             </div>
         </div>
     </section>
+    <script>
+        // LearnDash moves the login modal wrapper to <body>. Bring it back inline
+        // so the form is visible without an extra click.
+        (function () {
+            var cta = document.querySelector('[data-aula-login]');
+            if (!cta) {
+                return;
+            }
+
+            function moveWrapper() {
+                var modal = document.getElementById('ld-login-modal');
+                if (!modal) {
+                    return false;
+                }
+                var wrapper = modal.closest('.learndash-wrapper-login-modal');
+                if (wrapper && !cta.contains(wrapper)) {
+                    cta.appendChild(wrapper);
+                    return true;
+                }
+                return false;
+            }
+
+            if (moveWrapper()) {
+                return;
+            }
+
+            var observer = new MutationObserver(function () {
+                if (moveWrapper()) {
+                    observer.disconnect();
+                }
+            });
+            observer.observe(document.body, { childList: true, subtree: true });
+
+            // Fallback: try once more after LearnDash scripts run.
+            window.addEventListener('load', function () {
+                moveWrapper();
+            });
+        })();
+    </script>
     <?php
     return ob_get_clean();
 }

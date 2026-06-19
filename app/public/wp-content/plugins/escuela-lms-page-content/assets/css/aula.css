@@ -110,27 +110,182 @@ body.page-id-1652 .site-main > .content-container > article {
     margin-top: 12px;
 }
 
-.enya-aula-hero__cta .learndash-wrapper .ld-login-button {
-    background: var(--aula-accent) !important;
-    color: #fff !important;
-    border-radius: 999px !important;
-    padding: 18px 44px !important;
-    font-family: "Cabin", sans-serif !important;
-    font-size: 16px !important;
-    font-weight: 500 !important;
-    letter-spacing: 0.3px !important;
-    box-shadow: var(--aula-shadow-xs) !important;
-    display: inline-flex !important;
-    align-items: center !important;
-    gap: 10px !important;
-    transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+/* Show the LearnDash login form inline instead of opening a modal. */
+.enya-aula-hero__cta .learndash-wrapper:not(.learndash-wrapper-login-modal) {
+	display: none !important;
 }
 
-.enya-aula-hero__cta .learndash-wrapper .ld-login-button:hover,
-.enya-aula-hero__cta .learndash-wrapper .ld-login-button:focus {
+body.page-id-1652 .learndash-wrapper-login-modal {
+	display: block !important;
+}
+
+/* LearnDash moves the modal to the body, so scope by page class. */
+body.page-id-1652 #ld-login-modal {
+	position: static !important;
+	display: block !important;
+	visibility: visible !important;
+	opacity: 1 !important;
+	transform: none !important;
+	background: transparent !important;
+	box-shadow: none !important;
+	border-radius: 0 !important;
+	max-width: 100% !important;
+	min-height: auto !important;
+	margin: 0 !important;
+	padding: 0 !important;
+	overflow: visible !important;
+	text-align: left !important;
+}
+
+body.page-id-1652 .ld-modal-closer,
+body.page-id-1652 .ld-modal-heading,
+body.page-id-1652 .ld-login-modal-branding {
+	display: none !important;
+}
+
+body.page-id-1652 .ld-login-modal-login,
+body.page-id-1652 .ld-login-modal-wrapper,
+body.page-id-1652 .ld-login-modal-register .ld-content {
+	display: block !important;
+	padding: 0 !important;
+	background: transparent !important;
+}
+
+/* Higher specificity to beat LearnDash inline !important background-color. */
+body.page-id-1652 .learndash-wrapper .ld-login-modal .ld-login-modal-register {
+	display: block !important;
+	padding: 0 !important;
+	background-color: transparent !important;
+	background: transparent !important;
+	color: var(--aula-text) !important;
+}
+
+body.page-id-1652 .ld-login-modal-login {
+	margin-bottom: 16px;
+}
+
+body.page-id-1652 .ld-login-modal-form #loginform {
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+	margin: 0;
+}
+
+body.page-id-1652 .ld-login-modal-form .login-username,
+body.page-id-1652 .ld-login-modal-form .login-password,
+body.page-id-1652 .ld-login-modal-form .login-remember,
+body.page-id-1652 .ld-login-modal-form .login-submit {
+	margin: 0;
+	padding: 0;
+}
+
+body.page-id-1652 .ld-login-modal-form label {
+	display: block;
+	font-family: "Raleway", sans-serif;
+	font-size: 13px;
+	font-weight: 500;
+	color: var(--aula-muted);
+	margin-bottom: 6px;
+}
+
+body.page-id-1652 .ld-login-modal-form .input {
+	width: 100%;
+	padding: 12px 16px;
+	border: 1px solid var(--aula-border);
+	border-radius: var(--aula-radius-sm);
+	background: #fff;
+	color: var(--aula-text);
+	font-family: "Raleway", sans-serif;
+	font-size: 15px;
+	line-height: 1.4;
+	transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+body.page-id-1652 .ld-login-modal-form .input:focus {
+	outline: none;
+	border-color: var(--aula-accent);
+	box-shadow: 0 0 0 3px rgba(107, 127, 89, 0.12);
+}
+
+body.page-id-1652 .ld-login-modal-form .login-remember label {
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+	margin-bottom: 0;
+	cursor: pointer;
+}
+
+body.page-id-1652 .ld-login-modal-form .login-remember input[type="checkbox"] {
+	width: 16px;
+	height: 16px;
+	accent-color: var(--aula-accent);
+}
+
+body.page-id-1652 .ld-login-modal-form .button-primary {
+	width: 100%;
+	padding: 12px 24px;
+	border: none;
+	border-radius: 999px;
+	background: var(--aula-accent);
+	color: #fff !important;
+	font-family: "Cabin", sans-serif;
+	font-size: 15px;
+	font-weight: 500;
+	letter-spacing: 0.3px;
+	cursor: pointer;
+	box-shadow: var(--aula-shadow-xs);
+	transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+body.page-id-1652 .ld-login-modal-form .button-primary:hover,
+body.page-id-1652 .ld-login-modal-form .button-primary:focus {
+	background: var(--aula-accent-dark);
+	transform: translateY(-1px);
+	box-shadow: 0 18px 34px rgba(107, 127, 89, 0.25);
+}
+
+body.page-id-1652 .ld-forgot-password-link {
+	display: inline-block;
+	margin-top: 10px;
+	font-family: "Raleway", sans-serif;
+	font-size: 13px;
+	color: var(--aula-accent);
+	text-decoration: underline;
+}
+
+body.page-id-1652 .ld-forgot-password-link:hover,
+body.page-id-1652 .ld-forgot-password-link:focus {
+	color: var(--aula-accent-dark);
+}
+
+body.page-id-1652 .ld-login-modal-register .ld-modal-text {
+	font-family: "Raleway", sans-serif;
+	font-size: 14px;
+	color: var(--aula-muted);
+	margin-bottom: 10px;
+}
+
+body.page-id-1652 .ld-login-modal-register .ld-button {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	padding: 10px 22px;
+	border-radius: 999px;
+	border: 1.5px solid var(--aula-accent);
+	background: transparent;
+	color: var(--aula-accent);
+	font-family: "Cabin", sans-serif;
+	font-size: 14px;
+	font-weight: 500;
+	text-decoration: none;
+	transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+body.page-id-1652 .ld-login-modal-register .ld-button:hover,
+body.page-id-1652 .ld-login-modal-register .ld-button:focus {
+	background: var(--aula-accent);
+    color: #fff;
     transform: translateY(-1px);
-    box-shadow: 0 18px 34px rgba(107, 127, 89, 0.25) !important;
-    background: var(--aula-accent-dark) !important;
 }
 
 .enya-aula-hero__footnote {
