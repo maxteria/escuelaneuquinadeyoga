@@ -50,3 +50,5 @@ wp option update escuela_lms_enable_single_course_redirect 1
 - Preserved lowercase "Entrar al aula" label against Kadence capitalization.
 - Routed forgot-password and registration links to frontend pages (`/recuperar-contrasena/` and `/registro/`).
 - Added 301 redirects from `/registration-2/` and `/reset-password/` to the new slugs.
+- Translated LearnDash reset-password UI strings to Spanish.
+- Added client-side validation for the reset-password form (empty, min length, email format).
