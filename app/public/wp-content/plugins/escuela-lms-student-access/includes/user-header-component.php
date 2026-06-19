@@ -13,6 +13,29 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
+add_filter( 'theme_mod_header_desktop_items', 'escuela_lms_remove_legacy_header_button' );
+
+/**
+ * Remove the legacy "Aula Virtual" button from the Kadence desktop header.
+ *
+ * The user header component now provides the Aula CTA / dropdown, so the
+ * theme's header button is redundant.
+ *
+ * @param array $items Kadence header desktop items.
+ * @return array
+ */
+function escuela_lms_remove_legacy_header_button( $items ) {
+	if ( ! is_array( $items ) || ! isset( $items['main']['main_right'] ) ) {
+		return $items;
+	}
+
+	$items['main']['main_right'] = array_values(
+		array_diff( $items['main']['main_right'], array( 'button' ) )
+	);
+
+	return $items;
+}
+
 add_filter( 'wp_nav_menu_items', 'escuela_lms_inject_user_header_component', 20, 2 );
 
 /**
