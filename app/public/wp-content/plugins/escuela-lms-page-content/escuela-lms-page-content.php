@@ -712,6 +712,7 @@ function escuela_lms_render_aula_restricted_card( WP_User $user ) {
 }
 
 add_shortcode('inicio_landing', function() {
+    $img_url = esc_url(home_url('/wp-content/uploads/2026/05/escuela-neuquiena-de-yoga-32.png'));
     return '
 <section class="enya-home">
     <div class="enya-fullbleed-wrapper">
@@ -766,7 +767,7 @@ add_shortcode('inicio_landing', function() {
                 <a href="/courses/formacion-en-meditacion/" class="enya-btn enya-btn--primary">Ver formacion</a>
             </div>
             <div class="enya-home__featured-image">
-                <img src="http://escuelaneuquinadeyoga.local/wp-content/uploads/2026/05/escuela-neuquiena-de-yoga-32.png" alt="Formacion en Meditacion">
+                <img src="' . $img_url . '" alt="Formacion en Meditacion">
             </div>
         </div>
 
