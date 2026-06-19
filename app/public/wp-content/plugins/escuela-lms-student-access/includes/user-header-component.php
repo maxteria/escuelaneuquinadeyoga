@@ -151,10 +151,13 @@ function escuela_lms_render_aula_cta() {
 	$label = __( 'Entrar al aula', 'escuela-lms' );
 	$url   = escuela_lms_get_aula_dashboard_url_safe();
 
+	$icon = '<svg class="enyf-user-nav__cta-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><polyline points="10 17 15 12 10 7"/><line x1="15" y1="12" x2="3" y2="12"/></svg>';
+
 	return sprintf(
-		'<li class="menu-item menu-item-type-custom menu-item-object-custom enyf-user-nav__cta-item"><a class="enyf-user-nav__cta" href="%1$s">%2$s</a></li>',
+		'<li class="menu-item menu-item-type-custom menu-item-object-custom enyf-user-nav__cta-item"><a class="enyf-user-nav__cta" href="%1$s">%3$s<span>%2$s</span></a></li>',
 		esc_url( $url ),
-		esc_html( $label )
+		esc_html( $label ),
+		$icon
 	);
 }
 
