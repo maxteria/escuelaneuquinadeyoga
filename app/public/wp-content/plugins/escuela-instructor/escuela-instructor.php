@@ -58,6 +58,12 @@ if ( ! class_exists( 'Escuela_Instructor' ) ) {
                     $role->add_cap( self::CAPABILITY );
                 }
             }
+
+            // Also give group_leader access to see the Users list
+            $group_leader = get_role( 'group_leader' );
+            if ( $group_leader && ! $group_leader->has_cap( 'list_users' ) ) {
+                $group_leader->add_cap( 'list_users' );
+            }
         }
 
         /**
@@ -126,15 +132,4 @@ if ( is_admin() ) {
     }
 }
 
-// Admin-only classes (meta boxes, admin UI)
-if ( is_admin() ) {
-    if ( file_exists( plugin_dir_path( __FILE__ ) . 'includes/class-payment-meta.php' ) ) {
-        require_once plugin_dir_path( __FILE__ ) . 'includes/class-payment-meta.php';
-        Escuela_Instructor_Payment_Meta::init();
-    }
 
-    if ( file_exists( plugin_dir_path( __FILE__ ) . 'includes/class-admin.php' ) ) {
-        require_once plugin_dir_path( __FILE__ ) . 'includes/class-admin.php';
-        Escuela_Instructor_Admin::init();
-    }
-}

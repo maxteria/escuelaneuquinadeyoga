@@ -85,11 +85,36 @@ if ( ! class_exists( 'Escuela_Instructor_Service' ) ) {
 
             // Grant course access via LearnDash if available
             if ( function_exists( 'ld_update_course_access' ) ) {
-                // ld_update_course_access( $user_id, $course_id, $remove = false )
                 try {
                     ld_update_course_access( intval( $row['user_id'] ), intval( $row['course_id'] ), false );
                 } catch ( Exception $e ) {
                     // Silently continue — course access is best-effort
+                }
+            }
+
+            // Auto-add to default LD group 'todos-los-cursos' so instructors
+            // can see the student in Reports / ProPanel
+            $group = get_page_by_path( 'todos-los-cursos', OBJECT, 'groups' );
+            if ( $group ) {
+                $members = get_post_meta( $group->ID, 'group_users', true );
+                if ( ! is_array( $members ) ) {
+                    $members = array();
+                }
+                $user_id = intval( $row['user_id'] );
+                if ( ! in_array( $user_id, $members, true ) ) {
+                    $members[] = $user_id;
+                    update_post_meta( $group->ID, 'group_users', $members );
+
+                    // Also associate the course with the group if not already
+                    $courses = get_post_meta( $group->ID, 'group_courses', true );
+                    if ( ! is_array( $courses ) ) {
+                        $courses = array();
+                    }
+                    $course_id = intval( $row['course_id'] );
+                    if ( ! in_array( $course_id, $courses, true ) ) {
+                        $courses[] = $course_id;
+                        update_post_meta( $group->ID, 'group_courses', $courses );
+                    }
                 }
             }
 

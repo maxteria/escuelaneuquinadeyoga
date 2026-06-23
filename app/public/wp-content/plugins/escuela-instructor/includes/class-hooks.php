@@ -164,7 +164,30 @@ if ( ! class_exists( 'Escuela_Instructor_Hooks' ) ) {
             $markup .= '<p><a class="button" href="' . $link . '">Inscribirme</a></p>';
             $markup .= '</div>';
 
+            $markup .= self::admin_links_for_instructors();
+
             return $markup;
+        }
+
+        /**
+         * Render admin links for users who can manage inscriptions.
+         * Appended to the CTA so instructors always have quick access.
+         *
+         * @return string
+         */
+        private static function admin_links_for_instructors() {
+            if ( ! is_user_logged_in() || ! current_user_can( 'manage_inscripciones' ) ) {
+                return '';
+            }
+
+            $insc_url = esc_url( admin_url( 'admin.php?page=escuela-inscripciones' ) );
+            $admin_url = esc_url( admin_url() );
+
+            return '<p class="escuela-instructor-links">
+                <a href="' . $insc_url . '">🧑‍🏫 Panel de Inscripciones</a>
+                &ensp;|&ensp;
+                <a href="' . $admin_url . '">⚙️ Escritorio</a>
+            </p>';
         }
 
         /**
