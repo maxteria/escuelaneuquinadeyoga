@@ -69,17 +69,26 @@ if ( ! class_exists( 'Escuela_Instructor' ) ) {
             // get_page_by_path respects hierarchical pages; limit to pages
             $page = get_page_by_path( $slug, OBJECT, 'page' );
 
+            $shortcode_content = '[escuela_inscripcion_pendiente]';
+
             if ( ! $page ) {
-                // create a minimal page
                 $page_data = array(
                     'post_title'   => 'Inscripción pendiente',
                     'post_name'    => $slug,
-                    'post_content' => 'Página para inscripciones pendientes.',
+                    'post_content' => $shortcode_content,
                     'post_status'  => 'publish',
                     'post_type'    => 'page',
                 );
 
                 wp_insert_post( $page_data );
+            } else {
+                $current_content = trim( $page->post_content );
+                if ( '' === $current_content || 'Página para inscripciones pendientes.' === $current_content ) {
+                    wp_update_post( array(
+                        'ID'           => $page->ID,
+                        'post_content' => $shortcode_content,
+                    ) );
+                }
             }
         }
     }
@@ -99,8 +108,22 @@ if ( file_exists( plugin_dir_path( __FILE__ ) . 'includes/class-service.php' ) )
 
 if ( file_exists( plugin_dir_path( __FILE__ ) . 'includes/class-hooks.php' ) ) {
     require_once plugin_dir_path( __FILE__ ) . 'includes/class-hooks.php';
-    // Initialize public hooks
     Escuela_Instructor_Hooks::init();
+}
+
+// Admin-specific functionality
+if ( is_admin() ) {
+    $admin_path = plugin_dir_path( __FILE__ ) . 'includes/';
+
+    if ( file_exists( $admin_path . 'class-payment-meta.php' ) ) {
+        require_once $admin_path . 'class-payment-meta.php';
+        Escuela_Instructor_Payment_Meta::init();
+    }
+
+    if ( file_exists( $admin_path . 'class-admin.php' ) ) {
+        require_once $admin_path . 'class-admin.php';
+        Escuela_Instructor_Admin::init();
+    }
 }
 
 // Admin-only classes (meta boxes, admin UI)

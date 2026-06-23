@@ -27,9 +27,10 @@ if ( ! class_exists( 'Escuela_Instructor_Admin' ) ) {
         }
 
         public static function enqueue_assets( $hook ) {
-            // Load styles only on our admin page
-            if ( isset( $_GET['page'] ) && 'escuela-inscripciones' === $_GET['page'] ) {
-                wp_register_style( 'escuela-instructor-admin', plugin_dir_url( __FILE__ ) . '../assets/admin.css', array(), '0.1.0' );
+            $page = isset( $_GET['page'] ) ? sanitize_text_field( wp_unslash( $_GET['page'] ) ) : '';
+
+            if ( 'escuela-inscripciones' === $page ) {
+                wp_register_style( 'escuela-instructor-admin', plugin_dir_url( dirname( __FILE__ ) ) . 'assets/admin.css', array(), '0.1.0' );
                 wp_enqueue_style( 'escuela-instructor-admin' );
             }
         }

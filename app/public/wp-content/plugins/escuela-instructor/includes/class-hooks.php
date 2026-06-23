@@ -13,6 +13,7 @@ if ( ! class_exists( 'Escuela_Instructor_Hooks' ) ) {
             // Render payment instructions on the pending-inscription page
             add_filter( 'the_content', array( __CLASS__, 'render_pending_page' ) );
             add_shortcode( 'escuela_inscribirme', array( __CLASS__, 'shortcode_inscribirme' ) );
+            add_shortcode( 'escuela_inscripcion_pendiente', array( __CLASS__, 'shortcode_pendiente' ) );
         }
 
         /**
@@ -95,6 +96,29 @@ if ( ! class_exists( 'Escuela_Instructor_Hooks' ) ) {
             }
 
             return self::render_cta( $course_id );
+        }
+
+        /**
+         * Shortcode handler to render payment instructions on pending page
+         */
+        public static function shortcode_pendiente( $atts ) {
+            $course_id = 0;
+
+            if ( is_user_logged_in() ) {
+                $user_id = get_current_user_id();
+                $last = Escuela_Instructor_DB::get_last_for_user( $user_id );
+                if ( $last ) {
+                    $course_id = intval( $last['course_id'] );
+                }
+            }
+
+            if ( 0 === $course_id ) {
+                return '<p>No encontramos una inscripción pendiente asociada a tu usuario. Si ya realizaste el pago, contactá al instructor.</p>';
+            }
+
+            ob_start();
+            self::render_payment_instructions( $course_id );
+            return ob_get_clean();
         }
 
         /**
@@ -182,10 +206,7 @@ if ( ! class_exists( 'Escuela_Instructor_Hooks' ) ) {
 
             $user_id = get_current_user_id();
 
-            global $wpdb;
-            $table = $wpdb->prefix . 'escuela_inscripciones';
-
-            $rows = $wpdb->get_results( $wpdb->prepare( "SELECT * FROM {$table} WHERE user_id = %d AND status = %s", $user_id, 'pending' ), ARRAY_A );
+            $rows = Escuela_Instructor_DB::list_by_user( $user_id, 'pending' );
 
             if ( empty( $rows ) ) {
                 // No pending inscriptions — return original content

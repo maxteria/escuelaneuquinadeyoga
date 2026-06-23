@@ -117,5 +117,59 @@ if ( ! class_exists( 'Escuela_Instructor_DB' ) ) {
 
             return (bool) $count;
         }
+
+        /**
+         * List inscriptions for a user, optionally filtered by status.
+         *
+         * @param int         $user_id
+         * @param string|null $status
+         * @param int         $limit
+         * @return array
+         */
+        public static function list_by_user( $user_id, $status = null, $limit = 0 ) {
+            global $wpdb;
+
+            $user_id = intval( $user_id );
+            if ( 0 === $user_id ) {
+                return array();
+            }
+
+            $table = self::table_name();
+            $sql   = "SELECT * FROM {$table} WHERE user_id = %d";
+            $args  = array( $user_id );
+
+            if ( ! empty( $status ) ) {
+                $sql  .= " AND status = %s";
+                $args[] = sanitize_text_field( $status );
+            }
+
+            $sql .= " ORDER BY created_at DESC";
+
+            if ( $limit > 0 ) {
+                $sql  .= " LIMIT %d";
+                $args[] = intval( $limit );
+            }
+
+            $prepared = $wpdb->prepare( $sql, $args );
+
+            return $wpdb->get_results( $prepared, ARRAY_A );
+        }
+
+        /**
+         * Get the most recent inscription for a user.
+         *
+         * @param int         $user_id
+         * @param string|null $status
+         * @return array|null
+         */
+        public static function get_last_for_user( $user_id, $status = null ) {
+            $rows = self::list_by_user( $user_id, $status, 1 );
+
+            if ( empty( $rows ) ) {
+                return null;
+            }
+
+            return $rows[0];
+        }
     }
 }
