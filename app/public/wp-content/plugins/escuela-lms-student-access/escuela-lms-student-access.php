@@ -213,6 +213,15 @@ add_action('user_register', function($user_id) {
     wp_set_auth_cookie($user_id, true);
 });
 
+// Override LearnDash registration redirect to Aula with autologin
+add_filter('learndash_registration_redirect', function($url, $user_id) {
+    if (!empty($user_id)) {
+        wp_set_current_user($user_id);
+        wp_set_auth_cookie($user_id, true);
+    }
+    return home_url('/aula/');
+}, 10, 2);
+
 /**
  * Translate LearnDash auth UI strings to Spanish on the frontend.
  */
