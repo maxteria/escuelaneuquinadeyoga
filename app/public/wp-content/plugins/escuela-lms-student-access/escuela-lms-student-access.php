@@ -202,6 +202,17 @@ function escuela_lms_register_url( $register_url ) {
     return home_url( '/registro/' );
 }
 
+// Autologin after user registration (LearnDash / WP)
+add_action('user_register', function($user_id) {
+    if (is_admin()) return;
+
+    $user = get_user_by('id', $user_id);
+    if (!$user) return;
+
+    wp_set_current_user($user_id);
+    wp_set_auth_cookie($user_id, true);
+});
+
 /**
  * Translate LearnDash auth UI strings to Spanish on the frontend.
  */

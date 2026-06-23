@@ -508,7 +508,8 @@ function escuela_lms_page_content_template_redirect() {
     }
 
     if ( false !== strpos( $request, 'registration-success-2' ) ) {
-        wp_safe_redirect( home_url( '/registro-completado/' ), 301 );
+        // Redirect directly to Aula after registration (autologin handled via hooks)
+        wp_safe_redirect( home_url( '/aula/' ) );
         exit;
     }
 
