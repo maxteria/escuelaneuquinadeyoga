@@ -14,10 +14,25 @@ if ( ! $course ) {
 
 $title = get_the_title( $course_id );
 
-$cbu    = get_post_meta( $course_id, 'cbu', true );
-$alias  = get_post_meta( $course_id, 'alias', true );
-$banco  = get_post_meta( $course_id, 'banco', true );
-$titular = get_post_meta( $course_id, 'titular', true );
+$cbu    = get_post_meta( $course_id, '_escuela_payment_cbu', true );
+if ( empty( $cbu ) ) {
+    $cbu = get_post_meta( $course_id, 'cbu', true );
+}
+
+$alias  = get_post_meta( $course_id, '_escuela_payment_alias', true );
+if ( empty( $alias ) ) {
+    $alias = get_post_meta( $course_id, 'alias', true );
+}
+
+$banco  = get_post_meta( $course_id, '_escuela_payment_banco', true );
+if ( empty( $banco ) ) {
+    $banco = get_post_meta( $course_id, 'banco', true );
+}
+
+$titular = get_post_meta( $course_id, '_escuela_payment_titular', true );
+if ( empty( $titular ) ) {
+    $titular = get_post_meta( $course_id, 'titular', true );
+}
 
 echo '<div class="escuela-payment-instructions">';
 echo '<h2>Instrucciones de pago — ' . esc_html( $title ) . '</h2>';

@@ -1,0 +1,27 @@
+.escuela-inscripciones-table th,
+.escuela-inscripciones-table td {
+    vertical-align: middle;
+}
+
+.escuela-badge {
+    display: inline-block;
+    padding: 3px 8px;
+    border-radius: 12px;
+    font-size: 12px;
+    color: #fff;
+}
+
+.escuela-badge-pending { background: #f39c12; }
+.escuela-badge-active  { background: #27ae60; }
+
+.escuela-filters .button.current {
+    background: #0073aa;
+    color: #fff;
+    border-color: #006799;
+}
+
+/* Make approve button stand out */
+.escuela-inscripciones-table .button-primary {
+    background: #1e8cbe;
+    border-color: #0073aa;
+}

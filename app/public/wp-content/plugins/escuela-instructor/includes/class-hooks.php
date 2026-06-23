@@ -10,6 +10,8 @@ if ( ! class_exists( 'Escuela_Instructor_Hooks' ) ) {
         public static function init() {
             add_action( 'init', array( __CLASS__, 'handle_inscribirse' ) );
             add_filter( 'the_content', array( __CLASS__, 'append_cta' ) );
+            // Render payment instructions on the pending-inscription page
+            add_filter( 'the_content', array( __CLASS__, 'render_pending_page' ) );
             add_shortcode( 'escuela_inscribirme', array( __CLASS__, 'shortcode_inscribirme' ) );
         }
 
@@ -154,6 +156,53 @@ if ( ! class_exists( 'Escuela_Instructor_Hooks' ) ) {
                 // make $course_id available in template
                 include $tpl;
             }
+        }
+
+        /**
+         * If on the pending inscription page, render payment instructions for
+         * the current user's pending inscriptions.
+         *
+         * @param string $content
+         * @return string
+         */
+        public static function render_pending_page( $content ) {
+            if ( ! is_page() ) {
+                return $content;
+            }
+
+            global $post;
+
+            if ( ! $post || 'inscripcion-pendiente' !== $post->post_name ) {
+                return $content;
+            }
+
+            if ( ! is_user_logged_in() ) {
+                return $content;
+            }
+
+            $user_id = get_current_user_id();
+
+            global $wpdb;
+            $table = $wpdb->prefix . 'escuela_inscripciones';
+
+            $rows = $wpdb->get_results( $wpdb->prepare( "SELECT * FROM {$table} WHERE user_id = %d AND status = %s", $user_id, 'pending' ), ARRAY_A );
+
+            if ( empty( $rows ) ) {
+                // No pending inscriptions — return original content
+                return $content;
+            }
+
+            $out = $content;
+
+            foreach ( $rows as $row ) {
+                $course_id = intval( $row['course_id'] );
+                // Render the template for each pending inscription
+                ob_start();
+                self::render_payment_instructions( $course_id );
+                $out .= ob_get_clean();
+            }
+
+            return $out;
         }
     }
 }

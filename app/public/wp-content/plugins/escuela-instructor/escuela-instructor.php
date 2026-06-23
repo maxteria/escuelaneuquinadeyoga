@@ -102,3 +102,16 @@ if ( file_exists( plugin_dir_path( __FILE__ ) . 'includes/class-hooks.php' ) ) {
     // Initialize public hooks
     Escuela_Instructor_Hooks::init();
 }
+
+// Admin-only classes (meta boxes, admin UI)
+if ( is_admin() ) {
+    if ( file_exists( plugin_dir_path( __FILE__ ) . 'includes/class-payment-meta.php' ) ) {
+        require_once plugin_dir_path( __FILE__ ) . 'includes/class-payment-meta.php';
+        Escuela_Instructor_Payment_Meta::init();
+    }
+
+    if ( file_exists( plugin_dir_path( __FILE__ ) . 'includes/class-admin.php' ) ) {
+        require_once plugin_dir_path( __FILE__ ) . 'includes/class-admin.php';
+        Escuela_Instructor_Admin::init();
+    }
+}
