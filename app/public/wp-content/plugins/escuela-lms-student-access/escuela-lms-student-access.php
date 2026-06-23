@@ -239,16 +239,16 @@ add_filter('login_redirect', function($redirect_to, $request, $user) {
 // Frontend override: redirect registro-completado to /aula/
 // Frontend redirect: after registration, send to /aula/ (no jQuery dependency)
 add_action('wp_enqueue_scripts', function() {
-    // Register a lightweight handle to guarantee inline script output
-    if ( ! wp_script_is('escuela-inline', 'registered') ) {
-        wp_register_script('escuela-inline', false, array(), null, true);
+    // Enqueue a small external script only on registration success page
+    if ( is_page('registro-completado') ) {
+        wp_enqueue_script(
+            'escuela-redirect',
+            plugin_dir_url(__FILE__) . 'assets/js/redirect.js',
+            array(),
+            null,
+            true
+        );
     }
-    wp_enqueue_script('escuela-inline');
-
-    wp_add_inline_script(
-        'escuela-inline',
-        "if (window.location.pathname.indexOf('registro-completado') !== -1) { window.location.replace('/aula/'); }"
-    );
 });
 
 /**
