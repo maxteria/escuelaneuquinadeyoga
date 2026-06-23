@@ -578,7 +578,14 @@ add_shortcode('la_escuela_registration_success', function() {
             <a href="/aula/" style="background:#6B7F59;color:#fff;padding:18px 40px;text-decoration:none;border-radius:4px;font-family:Cabin;font-weight:500;display:inline-block;"><svg class="enyf-icon-enter" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><polyline points="10 17 15 12 10 7"/><line x1="15" y1="12" x2="3" y2="12"/></svg> Aula Virtual</a>
             <a href="/courses/" style="background:transparent;color:#6B7F59;padding:18px 40px;text-decoration:none;border:2px solid #6B7F59;border-radius:4px;font-family:Cabin;font-weight:500;display:inline-block;">Ver formaciones</a>
         </div>
-    </div>';
+        </div>
+        <script>
+        (function(){
+            if (window.location.pathname.indexOf("registro-completado") !== -1) {
+                window.location.replace("/aula/");
+            }
+        })();
+        </script>';
 });
 
 add_shortcode( 'la_escuela_hub', 'escuela_lms_render_aula_shortcode' );
