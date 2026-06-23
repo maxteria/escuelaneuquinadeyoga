@@ -91,3 +91,14 @@ register_activation_hook( __FILE__, array( 'Escuela_Instructor', 'activate' ) );
 if ( file_exists( plugin_dir_path( __FILE__ ) . 'includes/class-db.php' ) ) {
     require_once plugin_dir_path( __FILE__ ) . 'includes/class-db.php';
 }
+
+// Load service and hooks
+if ( file_exists( plugin_dir_path( __FILE__ ) . 'includes/class-service.php' ) ) {
+    require_once plugin_dir_path( __FILE__ ) . 'includes/class-service.php';
+}
+
+if ( file_exists( plugin_dir_path( __FILE__ ) . 'includes/class-hooks.php' ) ) {
+    require_once plugin_dir_path( __FILE__ ) . 'includes/class-hooks.php';
+    // Initialize public hooks
+    Escuela_Instructor_Hooks::init();
+}
