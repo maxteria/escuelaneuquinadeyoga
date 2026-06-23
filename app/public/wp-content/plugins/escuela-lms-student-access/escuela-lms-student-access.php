@@ -222,6 +222,20 @@ add_filter('learndash_registration_redirect', function($url, $user_id) {
     return home_url('/aula/');
 }, 10, 2);
 
+// Force redirect after login (covers registration flows that log in the user)
+add_filter('login_redirect', function($redirect_to, $request, $user) {
+    if (is_wp_error($user) || !$user) {
+        return $redirect_to;
+    }
+
+    // If coming from registration-related flows, send to Aula
+    if (isset($_REQUEST['redirect_to']) && strpos($_REQUEST['redirect_to'], 'registro') !== false) {
+        return home_url('/aula/');
+    }
+
+    return $redirect_to;
+}, 10, 3);
+
 /**
  * Translate LearnDash auth UI strings to Spanish on the frontend.
  */
