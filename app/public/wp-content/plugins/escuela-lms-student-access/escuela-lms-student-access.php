@@ -236,6 +236,14 @@ add_filter('login_redirect', function($redirect_to, $request, $user) {
     return $redirect_to;
 }, 10, 3);
 
+// Frontend override: redirect registro-completado to /aula/
+add_action('wp_enqueue_scripts', function() {
+    wp_add_inline_script(
+        'jquery',
+        "document.addEventListener('DOMContentLoaded',function(){if(window.location.pathname.includes('registro-completado')){window.location.href='/aula/';}});"
+    );
+});
+
 /**
  * Translate LearnDash auth UI strings to Spanish on the frontend.
  */
