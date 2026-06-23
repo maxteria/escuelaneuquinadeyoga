@@ -566,26 +566,14 @@ add_filter('body_class', function($classes) {
 
 add_shortcode('la_escuela_registration_success', function() {
     return '<div style="background:#faf7f4;padding:80px 20px;text-align:center;min-height:60vh;display:flex;flex-direction:column;justify-content:center;align-items:center;">
-        <h1 style="font-family:Gilda Display;font-size:48px;color:#3D3229;margin-bottom:30px;">Registro completado</h1>
-        <p style="font-family:Raleway;font-size:20px;color:#5C4F43;max-width:600px;margin:0 auto 24px;line-height:1.8;">Tu cuenta se activó correctamente. Ya podés comenzar tu recorrido en La Escuela.</p>
-        <p style="font-family:Raleway;font-size:18px;color:#5C4F43;max-width:600px;margin:0 auto 16px;line-height:1.7;">Seguimos así:</p>
-        <ol style="font-family:Raleway;font-size:18px;color:#5C4F43;max-width:600px;margin:0 auto 36px;padding-left:22px;text-align:left;line-height:1.7;">
-            <li>Ingresá a tu Aula Virtual con el botón de abajo.</li>
-            <li>En tu perfil, elegí <strong>Formación en Meditación</strong>.</li>
-            <li>Completá la primera lección para iniciar el recorrido.</li>
-        </ol>
+        <h1 style="font-family:Gilda Display;font-size:48px;color:#3D3229;margin-bottom:30px;">¡Ya estás dentro!</h1>
+        <p style="font-family:Raleway;font-size:20px;color:#5C4F43;max-width:600px;margin:0 auto 24px;line-height:1.8;">Tu cuenta se activó correctamente y ya estás logueado.</p>
+        <p style="font-family:Raleway;font-size:18px;color:#5C4F43;max-width:600px;margin:0 auto 32px;line-height:1.7;">Entrá a tu aula para comenzar tu recorrido.</p>
         <div style="display:flex;gap:20px;flex-wrap:wrap;justify-content:center;">
-            <a href="/aula/" style="background:#6B7F59;color:#fff;padding:18px 40px;text-decoration:none;border-radius:4px;font-family:Cabin;font-weight:500;display:inline-block;"><svg class="enyf-icon-enter" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><polyline points="10 17 15 12 10 7"/><line x1="15" y1="12" x2="3" y2="12"/></svg> Aula Virtual</a>
-            <a href="/courses/" style="background:transparent;color:#6B7F59;padding:18px 40px;text-decoration:none;border:2px solid #6B7F59;border-radius:4px;font-family:Cabin;font-weight:500;display:inline-block;">Ver formaciones</a>
+            <a href="/aula/" style="background:#6B7F59;color:#fff;padding:18px 40px;text-decoration:none;border-radius:4px;font-family:Cabin;font-weight:600;display:inline-block;">Ir al Aula</a>
+            <a href="/courses/" style="background:transparent;color:#6B7F59;padding:18px 40px;text-decoration:none;border:2px solid #6B7F59;border-radius:4px;font-family:Cabin;font-weight:500;display:inline-block;">Explorar formaciones</a>
         </div>
-        </div>
-        <script>
-        (function(){
-            if (window.location.pathname.indexOf("registro-completado") !== -1) {
-                window.location.replace("/aula/");
-            }
-        })();
-        </script>';
+    </div>';
 });
 
 add_shortcode( 'la_escuela_hub', 'escuela_lms_render_aula_shortcode' );

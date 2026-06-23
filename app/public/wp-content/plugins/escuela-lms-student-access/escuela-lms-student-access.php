@@ -238,18 +238,7 @@ add_filter('login_redirect', function($redirect_to, $request, $user) {
 
 // Frontend override: redirect registro-completado to /aula/
 // Frontend redirect: after registration, send to /aula/ (no jQuery dependency)
-add_action('wp_enqueue_scripts', function() {
-    // Enqueue a small external script only on registration success page
-    if ( is_page('registro-completado') ) {
-        wp_enqueue_script(
-            'escuela-redirect',
-            plugin_dir_url(__FILE__) . 'assets/js/redirect.js',
-            array(),
-            null,
-            true
-        );
-    }
-});
+// No frontend redirect override; rely on clear UX in success page
 
 /**
  * Translate LearnDash auth UI strings to Spanish on the frontend.
