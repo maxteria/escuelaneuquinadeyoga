@@ -59,10 +59,35 @@ if ( ! class_exists( 'Escuela_Instructor' ) ) {
                 }
             }
 
-            // Also give group_leader access to see the Users list
             $group_leader = get_role( 'group_leader' );
-            if ( $group_leader && ! $group_leader->has_cap( 'list_users' ) ) {
-                $group_leader->add_cap( 'list_users' );
+            if ( ! $group_leader ) {
+                return;
+            }
+
+            // Give group_leader access to see the Users list
+            $group_leader->add_cap( 'list_users' );
+
+            // Instructor needs to upload media (images for lessons, etc.)
+            $group_leader->add_cap( 'upload_files' );
+
+            // LearnDash maps courses, lessons, topics, quizzes, and questions
+            // to the 'course' capability type. Grant group_leader full CRUD
+            // for these post types, but NOT manage_options (LD Settings).
+            $course_caps = array(
+                'edit_courses',
+                'edit_others_courses',
+                'publish_courses',
+                'read_private_courses',
+                'edit_published_courses',
+                'edit_private_courses',
+                'delete_courses',
+                'delete_published_courses',
+                'delete_others_courses',
+                'delete_private_courses',
+            );
+
+            foreach ( $course_caps as $cap ) {
+                $group_leader->add_cap( $cap );
             }
         }
 
