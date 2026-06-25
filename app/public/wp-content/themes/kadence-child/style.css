@@ -1,0 +1,59 @@
+/*
+ Theme Name: Kadence Child
+ Theme URI: https://example.local/
+ Description: Child theme for Kadence to host courses landing partial and minimal styles.
+ Author: OpenAI SDD
+ Template: kadence
+ Version: 1.0.0
+*/
+
+/* Header adjustments */
+.site-header .site-branding {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.site-header .site-branding .custom-logo {
+  width: 120px;
+  height: auto;
+}
+
+.site-header .site-header-row-container-inner {
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+@media (max-width: 768px) {
+  .site-header .site-branding .custom-logo {
+    width: 90px;
+  }
+
+  .site-header .site-header-row-container-inner {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+}
+
+/* Courses landing layout */
+.enyf-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+}
+
+.enyf-card__image {
+  background-size: cover;
+  background-position: center;
+  min-height: 180px;
+}
+
+.enyf-card__body {
+  padding: 18px;
+}
+
+.enyf-empty-state {
+  padding: 40px;
+  text-align: center;
+  color: #5C4F43;
+}
